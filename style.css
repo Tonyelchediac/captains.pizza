@@ -96,15 +96,35 @@ nav svg {
 }
 
 .home-container {
+  position: relative;
+  background-image: url('images/feren.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
+.home-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: 1;
+}
+
+.home-container > * {
+  position: relative;
+  z-index: 2;
+}
+
 .home-container img {
   margin: auto;
-  width: 50rem;
+  width: 40rem;
 }
 
 /* sections */
@@ -121,6 +141,7 @@ nav svg {
   font-size: 40px;
   color: var(--text-color);
   text-align: center;
+  text-decoration: underline;
 }
 
 .section-container {
@@ -160,6 +181,18 @@ nav svg {
   color: var(--text-color-1);
   font-size: 11px;
   line-height: 1.4;
+}
+
+.social-media-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.social-media-icon a{
+  color: var(--text-color);
+  font-size: 40px;
 }
 
 footer{
@@ -232,8 +265,11 @@ footer{
     z-index: 9;
   }
 
+  /* home */
+
   #Home {
     height: auto;
+    margin-bottom: 40px;
   }
 
   .home-container {
@@ -245,8 +281,16 @@ footer{
     margin-top: 50px;
   }
   
+  /* section */
+
+  #Appetizers{
+    margin-top: 50px;
+  }
+
   .section-title{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+    text-decoration: underline;
   }
 
   .section-container {
@@ -286,6 +330,11 @@ footer{
     color: var(--text-color-1);
     font-size: 7px;
     line-height: 1.4;
+  }
+
+  .social-media-icon a{
+    font-size:30px;
+    margin: 10px;
   }
 
 footer{
