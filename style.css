@@ -24,6 +24,15 @@ body {
   background-color: var(--background-color);
 }
 
+span{
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+em{
+  font-style: normal;
+  color: #d94505;
+}
 /*header*/
 
 header {
@@ -99,11 +108,12 @@ nav svg {
   position: relative;
   background-image: url('images/feren.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 115%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 
 .home-container::after {
@@ -113,7 +123,7 @@ nav svg {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   z-index: 1;
 }
 
@@ -127,17 +137,76 @@ nav svg {
   width: 40rem;
 }
 
+
+  /* image section */
+  #Image1{
+    height: 50vh;
+    background-image: url('images/rkaka.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #Image2{
+    height: 50vh;
+    background-image: url('images/pizza 3l tawle ba3 blur bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #Image3{
+    height: 50vh;
+    background-image: url('images/hamburger.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #Image4{
+    height: 50vh;
+    background-image: url('images/set pizza bl feren.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #Image5{
+    height: 50vh;
+    background-image: url('images/pizza 3l tawle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #Image6{
+    height: 50vh;
+    background-image: url('images/pizza in hand.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
 /* sections */
 .Section {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 0px;
+  padding-top: 30px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+#Appetizers .section-title{
+  margin: 4rem 0;
+  
 }
 
 .section-title {
-  margin: 4rem 0;
+  margin:4rem 0;
   font-size: 40px;
   color: var(--text-color);
   text-align: center;
@@ -152,7 +221,7 @@ nav svg {
   margin: 1rem 0;
   border-radius: 25px;
   width: 100%;
-  max-width: 58%;
+  max-width: 70%;
   padding: 1rem;
 }
 
@@ -170,11 +239,25 @@ nav svg {
 }
 
 .section-name-and-price {
+  color: var(--text-color-2);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+.section-name-and-price-pizza {
   font-size: 20px;
   color: var(--text-color-2);
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.3rem;
+}
+
+.section-name-and-price-pizza h1{
+  display: flex;
+}
+
+.section-name-and-price-pizza .price p{
+  margin-left: 40px;
 }
 
 .section-item-description {
@@ -183,7 +266,10 @@ nav svg {
   line-height: 1.4;
 }
 
-.social-media-icon{
+.social-media-icon p{
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,6 +277,8 @@ nav svg {
 }
 
 .social-media-icon a{
+  display: flex;
+  justify-content: center;
   color: var(--text-color);
   font-size: 40px;
 }
@@ -209,8 +297,13 @@ footer{
 
 
 
+
+
+
+
+
 /* responsive website */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   nav {
     height: 50px;
   }
@@ -231,7 +324,7 @@ footer{
     top: 0;
     right: -100%;
     z-index: 10;
-    width: 300px;
+    width: 200px;
     background-color: var(--background-color);
     box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
@@ -265,6 +358,80 @@ footer{
     z-index: 9;
   }
 
+  .section-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--div-color);
+    margin: 1rem 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 90%;
+    padding: 0.5rem;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    height: 50px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  Button {
+    width: 130px;
+    height: 40px;
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 200px;
+    background-color: var(--background-color);
+    box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 20px;
+    justify-content: flex-start;
+  }
+
+  .open-sidebar-button {
+    display: block;
+  }
+
+  .close-sidebar-button {
+    padding: 20px;
+    display: block;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+
+  #sidebar-active:checked ~ #overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+
+  /* */
+  span{
+    font-size: 10.5px;
+  }
+
   /* home */
 
   #Home {
@@ -283,13 +450,19 @@ footer{
   
   /* section */
 
-  #Appetizers{
-    margin-top: 50px;
+  .Section{
+    margin-bottom: 50px;
+    padding-top: 20px;
+    margin-top: 0px;
+  }
+
+  #Appetizers .section-title{
+    margin: 3rem 0;
   }
 
   .section-title{
+    margin: 3rem 0;
     font-size: 1.1rem;
-    margin: 2rem 0;
     text-decoration: underline;
   }
 
@@ -323,16 +496,42 @@ footer{
     color: var(--text-color-2);
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
+  .section-name-and-price-pizza {
+    font-size: 11px;
+    color: var(--text-color-2);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .section-name-and-price-pizza h1{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-name-and-price-pizza .price p{
+    margin-left: 0px;
+  }
+  
   
   .section-item-description {
     color: var(--text-color-1);
-    font-size: 7px;
+    font-size: 6.5px;
     line-height: 1.4;
   }
 
+  .social-media-icon p{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .social-media-icon a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size:30px;
     margin: 10px;
   }
