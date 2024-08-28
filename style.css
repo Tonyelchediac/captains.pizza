@@ -447,6 +447,11 @@ footer{
     width: 20rem;
     margin-top: 50px;
   }
+
+  /* images */
+  #Image1, #Image2, #Image3, #Image4, #Image5, #Image6{
+    height: 30vh;
+  }
   
   /* section */
 
