@@ -870,5 +870,52 @@
        <footer>
         &copy; 2024 Captain's Pizza. All Right Reserved.
        </footer>
+
+       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section'); // Select all sections
+            const navLinks = document.querySelectorAll('.links-container a'); // Select all nav links
+        
+            // Function to remove 'active' class from all nav links
+            function removeActiveClasses() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+        
+            // Function to add 'active' class to the current nav link
+            function addActiveClass(currentSectionId) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href').substring(1) === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        
+            // Function to handle scroll events
+            function handleScroll() {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const scrollY = window.scrollY;
+        
+                    // Check if the section is in the viewport
+                    if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight) {
+                        const currentSectionId = section.getAttribute('id');
+                        removeActiveClasses();
+                        addActiveClass(currentSectionId);
+                    }
+                });
+            }
+        
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        
+            // Call handleScroll on page load to set the initial active state
+            handleScroll();
+        });
+        </script>
+        
+        
 </body>
 </html>
