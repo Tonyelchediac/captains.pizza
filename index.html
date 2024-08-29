@@ -1,921 +1,938 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="images/captain's pizza logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/captain's pizza logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Captain's Pizza</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo">
-                Captain's Pizza
-            </div>
-            <input type="checkbox" id="sidebar-active">
-            <label for="sidebar-active" class="open-sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                </svg>
-            </label>
-            <label for="sidebar-active" id="overlay"></label>
-            <div class="links-container">
-                <label for="sidebar-active" class="close-sidebar-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
-                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                    </svg>
-                </label>
-                <a href="#Appetizers">Appetizers</a>
-                <a href="#Salads">Salads</a>
-                <a href="#Pizza">Pizza</a>
-                <a href="#Burgers">Burgers</a>
-                <a href="#Drinks">Drinks</a>
-                <a href="#Add-extra">Add Extra</a>
-                <a href="#Arguile">Arguile</a>
-                <a href="#contact">Contact us</a>
-            </div>
-        </nav>
+      <nav>
+        <div class="logo">Captain's Pizza</div>
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#5f6368"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </label>
+        <label for="sidebar-active" id="overlay"></label>
+        <div class="links-container">
+          <label for="sidebar-active" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="#5f6368"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </label>
+          <a href="#Appetizers">Appetizers</a>
+          <a href="#Salads">Salads</a>
+          <a href="#Pizza">Pizza</a>
+          <a href="#Burgers">Burgers</a>
+          <a href="#Drinks">Drinks</a>
+          <a href="#Add-extra">Add Extra</a>
+          <a href="#Arguile">Arguile</a>
+        </div>
+      </nav>
     </header>
 
     <!-- home image section -->
-     <section id="Home">
-        <div class="home-container">
-            <img src="images/captain's pizza logo.png" alt="">
+    <section id="Home">
+      <div class="home-container">
+        <div class="logo-wrapper">
+          <img
+            src="images/captain's pizza logo 1.png"
+            alt="Captain's Pizza Logo"
+          />
+          <p>WOOD OVEN</p>
         </div>
-     </section>
+      </div>
+    </section>
+
+    <!-- social media icon -->
+    <section id="Rateandsocial">
+      <div class="rate-and-icon">
+        <p>Rate = 90,000L.L</p>
+        <div class="social-media-icon">
+          <div class="social-media-icon-and-name">
+            <a href="https://instagram.com/captains.pizza"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <p>instagram</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a
+              href="https://www.facebook.com/profile.php?id=100066420747274&mibextid=ZbWKwL"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <p>facebook</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a href=""><i class="bx bxs-phone"></i></a>
+            <p>phone</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a
+              href="https://www.google.com/maps/d/u/0/edit?mid=1K0riTFrMiZmBJa9nIjDUgYuA73XvmbY&usp=sharing"
+              ><i class="bx bx-current-location"></i
+            ></a>
+            <p>location</p>
+          </div>
+        </div>
+      </div>
+      <!-- Custom Alert Overlay -->
+      <div id="custom-alert-overlay"></div>
+      <div id="custom-alert">
+        <button class="close-btn" onclick="closeCustomAlert()">X</button>
+        <a href="tel:+961 81 635636" style="margin-top: 70px"><i class="bx bxs-phone"></i>Batroun</a>
+        <a href="tel:+961 76 781780"><i class="bx bxs-phone"></i>Jbeil</a>
+        <a href="tel:+961 71 883916"><i class="bx bxs-phone"></i>Douma</a>
+      </div>
+    </section>
 
     <!-- appetizers section -->
     <section id="Appetizers" class="Section">
-            <div class="section-title">
-                <h2>APPETIZERS</h2>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Fries</h1>
-                        <h1>3.75$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Twisters</h1>
-                        <h1>4.50$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Focaccia</h1>
-                        <h1>4.50$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Nachos</h1>
-                        <h1>5.50$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Italian Rolls</h1>
-                        <h1>7.00$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Chicken Sticks</h1>
-                        <h1>4.75$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Nuggets</h1>
-                        <h1>4.00$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2></h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>
-                            <p>Chicken Wings</p>
-                            <span>Servered 6 pieces</span>
-                        </h1>
-                        <h1>6.00$</h1>
-                        
-                    </div>
-                    <div class="section-item-description">
-                        <h2>
-                            Buffalo, BBQ, Garlic Parmesan, Lemon Pepper
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>
-                            <p>Chicken Wings</p>
-                            <span>Servered 10 pieces</span>
-                        </h1>
-                        <h1>8.00$</h1>
-                        
-                    </div>
-                    <div class="section-item-description">
-                        <h2>
-                            Buffalo, BBQ, Garlic Parmesan, Lemon Pepper
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Combo</h1>
-                        <h1>9.50$</h1>
-                        
-                    </div>
-                    <div class="section-item-description">
-                        <h2>
-                            3 Chicken Sticks, 3 Italian Rolls, 3 Mozzarella Sticks Fries, Garlic Aoli Sauce
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Submarine</h1>
-                        <h1>8.25$</h1>
-                        
-                    </div>
-                    <div class="section-item-description">
-                        <h2>
-                            Lettuce, Tomato, Olive, Mushroom, Mozzarela Cheese, Ham, Mayo, Mustard
-                        </h2>
-                    </div>
-                </div>
-            </div>
+      <div class="section-title">
+        <h2>APPETIZERS</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Fries</h1>
+            <h1>3.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Twisters</h1>
+            <h1>4.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Focaccia</h1>
+            <h1>4.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Nachos</h1>
+            <h1>5.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Italian Rolls</h1>
+            <h1>7.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Chicken Sticks</h1>
+            <h1>4.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Nuggets</h1>
+            <h1>4.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Chicken Wings</p>
+              <span>Servered 6 pieces</span>
+            </h1>
+            <h1>6.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Buffalo, BBQ, Garlic Parmesan, Lemon Pepper</h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Chicken Wings</p>
+              <span>Servered 10 pieces</span>
+            </h1>
+            <h1>8.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Buffalo, BBQ, Garlic Parmesan, Lemon Pepper</h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Combo</h1>
+            <h1>9.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              3 Chicken Sticks, 3 Italian Rolls, 3 Mozzarella Sticks Fries,
+              Garlic Aoli Sauce
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Submarine</h1>
+            <h1>8.25$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Lettuce, Tomato, Olive, Mushroom, Mozzarela Cheese, Ham, Mayo,
+              Mustard
+            </h2>
+          </div>
+        </div>
+      </div>
     </section>
 
-      <!-- image section -->
-       <section id="Image1"></section>
+    <!-- image section -->
+    <section id="Image1"></section>
 
-     <!-- salads section -->
-      <section id="Salads" class="Section">
-            <div class="section-title">
-                <h2>SALADS</h2>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Chicken Ceaser</h1>
-                        <h1>8.75$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2>Romaine Lettuce, Chicken, Croutons, Parmesan Cheese Mixed with Caesar Dressing Sauce</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Rocca Salad</h1>
-                        <h1>8.00$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2>Rocca, Tomato, Mushroom, Walnuts, Lemon Oil Sauce</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- item -->
-            <div class="section-container">
-                <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-                <div class="section-item-container">
-                    <div class="section-name-and-price">
-                        <h1>Chef Salad</h1>
-                        <h1>9.00$</h1>
-                    </div>
-                    <div class="section-item-description">
-                        <h2>Lettuce, Chicken, Hamand Cheese, Eggs, Corn, Olives, Cucumber, Tomato, Mixed with Lemon Mayo Sauce</h2>
-                    </div>
-                </div>
-            </div>
-      </section>
+    <!-- salads section -->
+    <section id="Salads" class="Section">
+      <div class="section-title">
+        <h2>SALADS</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Chicken Ceaser</h1>
+            <h1>8.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Romaine Lettuce, Chicken, Croutons, Parmesan Cheese Mixed with
+              Caesar Dressing Sauce
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Rocca Salad</h1>
+            <h1>8.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Rocca, Tomato, Mushroom, Walnuts, Lemon Oil Sauce</h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Chef Salad</h1>
+            <h1>9.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Lettuce, Chicken, Hamand Cheese, Eggs, Corn, Olives, Cucumber,
+              Tomato, Mixed with Lemon Mayo Sauce
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- image section -->
-      <section id="Image2"></section>
+    <!-- image section -->
+    <section id="Image2"></section>
 
-     <!-- pizza section -->
-     <section id="Pizza" class="Section">
-        <div class="section-title">
-            <h2>PIZZA</h2>
+    <!-- pizza section -->
+    <section id="Pizza" class="Section">
+      <div class="section-title">
+        <h2>PIZZA</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Margerita</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>6.50$</p>
+              <p><em>L: </em>7.50$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Fresh Basil</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Margerita</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>6.50$</p>
-                        <p><em>L: </em>7.50$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Fresh Basil
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Vegeterian</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.50$</p>
+              <p><em>L: </em>8.00$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom,
+              Onion, Black Olives
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Vegeterian</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.50$</p>
-                        <p><em>L: </em>8.00$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom, Onion, Black Olives
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Classic</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.00$</p>
+              <p><em>L: </em>7.75$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Classic</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.00$</p>
-                        <p><em>L: </em>7.75$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Artichoke</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.00$</p>
+              <p><em>L: </em>8.00$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Artichoke</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.00$</p>
-                        <p><em>L: </em>8.00$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Pepperoni</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.50$</p>
+              <p><em>L: </em>8.50$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Pepperoni</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.50$</p>
-                        <p><em>L: </em>8.50$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Sweet Pepperoni</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>8.50$</p>
+              <p><em>L: </em>9.50$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Pepperoni, Honey, Chili Oil</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Sweet Pepperoni</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>8.50$</p>
-                        <p><em>L: </em>9.50$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Pepperoni, Honey, Chili Oil
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Captain's</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.50$</p>
+              <p><em>L: </em>8.50$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry
+              Tomato, Balsamic Sauce
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Captain's</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.50$</p>
-                        <p><em>L: </em>8.50$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry Tomato, Balsamic Sauce
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Village</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.00$</p>
+              <p><em>L: </em>7.75$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato</h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Village</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.00$</p>
-                        <p><em>L: </em>7.75$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Eggplant</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.00$</p>
+              <p><em>L: </em>7.75$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Eggplant</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.00$</p>
-                        <p><em>L: </em>7.75$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container" style="padding: 1rem 0.5rem">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Chicken Pizza</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.75$</p>
+              <p><em>L: </em>8.75$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives,
+              Mushroom, Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container" style="padding: 1rem 0.5rem;">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Chicken Pizza</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.75$</p>
-                        <p><em>L: </em>8.75$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives, Mushroom, Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Four Cheese</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.50$</p>
+              <p><em>L: </em>8.50$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel ,Parmesan
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Four Cheese</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.50$</p>
-                        <p><em>L: </em>8.50$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel ,Parmesan    
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price-pizza">
+            <h1>
+              <p>Toscana</p>
+            </h1>
+            <h1 class="price">
+              <p><em>M: </em>7.50$</p>
+              <p><em>L: </em>8.25$</p>
+            </h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried
+              Tomato, Fresh Basil
+            </h2>
+          </div>
         </div>
-           <!-- item -->
-           <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price-pizza">
-                    <h1>
-                        <p>Toscana</p>
-                    </h1>
-                    <h1 class="price">
-                        <p><em>M: </em>7.50$</p>
-                        <p><em>L: </em>8.25$</p>
-                    </h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried Tomato, Fresh Basil
-                    </h2>
-                </div>
-            </div>
-        </div>
-     </section>
+      </div>
+    </section>
 
-      <!-- image section -->
-      <section id="Image3"></section>
+    <!-- image section -->
+    <section id="Image3"></section>
 
-     <!-- burgers section -->
-     <section id="Burgers" class="Section">
-        <div class="section-title">
-            <h2>BURGERS</h2>
+    <!-- burgers section -->
+    <section id="Burgers" class="Section">
+      <div class="section-title">
+        <h2>BURGERS</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Classic Burger</h1>
+            <h1>8.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Beef, Tomato, Onion, Cheddar Cheese, Mayo, Mustard Ketchup</h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Classic Burger</h1>
-                    <h1>8.50$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>Beef, Tomato, Onion, Cheddar Cheese, Mayo, Mustard Ketchup</h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Chicken Burger</h1>
+            <h1>8.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Chicken breast, Pickles, Mushroom, Lettuce, Garlic Sauce</h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Chicken Burger</h1>
-                    <h1>8.50$</h1>
-                </div>
-                <div class="section-item-description">
-                <h2>Chicken breast, Pickles, Mushroom, Lettuce, Garlic Sauce</h2>    
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Mushroom Cap Burger</h1>
+            <h1>10.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Beef, Stuffed Mushroom , Lolorosso, Pickles, Onion Special Sauce
+            </h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Mushroom Cap Burger</h1>
-                    <h1>10.50$</h1>
-                </div>
-                <div class="section-item-description">
-                <h2>Beef, Stuffed Mushroom , Lolorosso, Pickles, Onion Special Sauce</h2>    
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>C.C.C. Burger</h1>
+            <h1>9.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>
+              Crispy Chicken, Lolorosso, Pickles, Tomato, Garlic Aoli Sauce
+            </h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>C.C.C. Burger</h1>
-                    <h1>9.50$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>Crispy Chicken, Lolorosso, Pickles, Tomato, Garlic Aoli Sauce</h2>
-                </div>
-            </div>
-        </div>
-  </section>
+      </div>
+    </section>
 
-      <!-- image section -->
-      <section id="Image4"></section>
+    <!-- image section -->
+    <section id="Image4"></section>
 
-     <!-- drinks section -->
-     <section id="Drinks" class="Section">
-        <div class="section-title">
-            <h2>DRINKS</h2>
+    <!-- drinks section -->
+    <section id="Drinks" class="Section">
+      <div class="section-title">
+        <h2>DRINKS</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Soft Drinks</h1>
+            <h1>1.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2>Pepsi, Miranda, 7up</h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Soft Drinks</h1>
-                    <h1>1.75$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>Pepsi, Miranda, 7up</h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Water</p>
+              <span>Small</span>
+            </h1>
+            <h1>0.50$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Water</p>
-                        <span>Small</span>
-                    </h1>
-                    <h1>0.50$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Water</p>
+              <span>Large</span>
+            </h1>
+            <h1>1.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Water</p>
-                        <span>Large</span>
-                    </h1>
-                    <h1>1.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Sparkling Water</h1>
+            <h1>2.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Sparkling Water</h1>
-                    <h1>2.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Ice Tea</h1>
+            <h1>2.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Ice Tea</h1>
-                    <h1>2.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Local Beer</h1>
+            <h1>2.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Imported Beer</h1>
+            <h1>3.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Local Beer</h1>
-                    <h1>2.75$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
+    <!-- image section -->
+    <section id="Image5"></section>
 
-                    </h2>
-                </div>
-            </div>
+    <!-- add extra section -->
+    <section id="Add-extra" class="Section">
+      <div class="section-title">
+        <h2>ADD EXTRA</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Mushroom</h1>
+            <h1>0.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Imported Beer</h1>
-                    <h1>3.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Cheese</p>
+            </h1>
+            <h1>0.75$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-  </section>
-
-      <!-- image section -->
-      <section id="Image5"></section>
-
-     <!-- add extra section -->
-     <section id="Add-extra" class="Section">
-        <div class="section-title">
-            <h2>ADD EXTRA</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Pepperoni</p>
+            </h1>
+            <h1>1.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Mushroom</h1>
-                    <h1>0.75$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Ham</h1>
+            <h1>1.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Cheese</p>
-                    </h1>
-                    <h1>0.75$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Any Sauce</h1>
+            <h1>2.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Pepperoni</p>
-                    </h1>
-                    <h1>1.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- image section -->
+    <section id="Image6"></section>
+
+    <!-- arguile section -->
+    <section id="Arguile" class="Section">
+      <div class="section-title">
+        <h2>ARGUILE</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Lemon & Mint</h1>
+            <h1>5.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Ham</h1>
-                    <h1>1.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Two Apples</p>
+            </h1>
+            <h1>5.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Any Sauce</h1>
-                    <h1>2.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-
-                    </h2>
-                </div>
-            </div>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>
+              <p>Grape</p>
+            </h1>
+            <h1>5.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-  </section>
-
-      <!-- image section -->
-      <section id="Image6"></section>
-
-     <!-- arguile section -->
-     <section id="Arguile" class="Section">
-        <div class="section-title">
-            <h2>ARGUILE</h2>
+      </div>
+      <!-- item -->
+      <div class="section-container">
+        <img src="images/captain's pizza.jpg" alt="Appetizer Image" />
+        <div class="section-item-container">
+          <div class="section-name-and-price">
+            <h1>Mint</h1>
+            <h1>5.00$</h1>
+          </div>
+          <div class="section-item-description">
+            <h2></h2>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Lemon & Mint</h1>
-                    <h1>5.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
+      </div>
+    </section>
 
-                    </h2>
-                </div>
-            </div>
+    <!-- social media icon -->
+    <section id="Rateandsocial">
+      <div class="rate-and-icon">
+        <p>Rate = 90,000L.L</p>
+        <div class="social-media-icon">
+          <div class="social-media-icon-and-name">
+            <a href="https://instagram.com/captains.pizza"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <p>instagram</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a
+              href="https://www.facebook.com/profile.php?id=100066420747274&mibextid=ZbWKwL"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <p>facebook</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a href=""><i class="bx bxs-phone"></i></a>
+            <p>phone</p>
+          </div>
+          <div class="social-media-icon-and-name">
+            <a
+              href="https://www.google.com/maps/d/u/0/edit?mid=1K0riTFrMiZmBJa9nIjDUgYuA73XvmbY&usp=sharing"
+              ><i class="bx bx-current-location"></i
+            ></a>
+            <p>location</p>
+          </div>
         </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Two Apples</p>
-                    </h1>
-                    <h1>5.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>
-                        <p>Grape</p>
-                    </h1>
-                    <h1>5.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <!-- item -->
-        <div class="section-container">
-            <img src="images/captain's pizza.jpg" alt="Appetizer Image">
-            <div class="section-item-container">
-                <div class="section-name-and-price">
-                    <h1>Mint</h1>
-                    <h1>5.00$</h1>
-                </div>
-                <div class="section-item-description">
-                    <h2>
-                        
-                    </h2>
-                </div>
-            </div>
-        </div>
-  </section>
+      </div>
+      <!-- Custom Alert Overlay -->
+      <div id="custom-alert-overlay"></div>
+      <div id="custom-alert">
+        <button class="close-btn" onclick="closeCustomAlert()">X</button>
+        <a href="tel:+961 81 635636" style="margin-top: 70px"><i class="bx bxs-phone"></i>Batroun</a>
+        <a href="tel:+961 76 781780"><i class="bx bxs-phone"></i>Jbeil</a>
+        <a href="tel:+961 71 883916"><i class="bx bxs-phone"></i>Douma</a>
+      </div>
+    </section>
 
+    <!-- footer -->
+    <footer>&copy; 2024 Captain's Pizza. All Right Reserved.</footer>
 
-
-      <!-- social media icon -->
-       <section>
-            <div class="social-media-icon">
-                <p>Rate = 90,000L.L</p>
-                <a href="https://instagram.com/captains.pizza"><i class='bx bxl-instagram'></i></a>
-            </div>
-       </section>
-
-      <!-- footer -->
-       <footer>
-        &copy; 2024 Captain's Pizza. All Right Reserved.
-       </footer>
-
-       <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section'); // Select all sections
-            const navLinks = document.querySelectorAll('.links-container a'); // Select all nav links
-        
-            // Function to remove 'active' class from all nav links
-            function removeActiveClasses() {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-            }
-        
-            // Function to add 'active' class to the current nav link
-            function addActiveClass(currentSectionId) {
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href').substring(1) === currentSectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        
-            // Function to handle scroll events
-            function handleScroll() {
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    const scrollY = window.scrollY;
-        
-                    // Check if the section is in the viewport
-                    if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight) {
-                        const currentSectionId = section.getAttribute('id');
-                        removeActiveClasses();
-                        addActiveClass(currentSectionId);
-                    }
-                });
-            }
-        
-            // Add scroll event listener
-            window.addEventListener('scroll', handleScroll);
-        
-            // Call handleScroll on page load to set the initial active state
-            handleScroll();
-        });
-        </script>
-        
-        
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
