@@ -91,15 +91,6 @@ nav svg {
   display: none;
 }
 
-.hire-me-button Button {
-  background-color: transparent;
-  padding: 10px;
-  width: 150px;
-  border-radius: 15px;
-  border: 2px solid var(--text-color);
-  color: var(--text-color);
-}
-
 /* home */
 #Home {
   background-color: var(--background-color);
@@ -147,6 +138,24 @@ nav svg {
   color: var(--text-color);
   font-size: 1.5rem;
   font-weight: bold; 
+}
+
+/* back tp top */
+
+.back-to-top{
+  position: fixed;
+}
+
+.back-to-top a{
+  position: fixed;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-radius: 50%;
+  font-size: 45px;
+  width: auto;
+  height: auto;
+  bottom: 20px;
+  right: 20px;
 }
 
   /* image section */

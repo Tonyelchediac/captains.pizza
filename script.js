@@ -1,15 +1,14 @@
+// the hover of the navlinks to change color when this section is in the viewport
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section"); // Select all sections
-  const navLinks = document.querySelectorAll(".links-container a"); // Select all nav links
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".links-container a");
 
-  // Function to remove 'active' class from all nav links
   function removeActiveClasses() {
     navLinks.forEach((link) => {
       link.classList.remove("active");
     });
   }
 
-  // Function to add 'active' class to the current nav link
   function addActiveClass(currentSectionId) {
     navLinks.forEach((link) => {
       if (link.getAttribute("href").substring(1) === currentSectionId) {
@@ -18,14 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to handle scroll events
   function handleScroll() {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
       const scrollY = window.scrollY;
 
-      // Check if the section is in the viewport
       if (
         scrollY >= sectionTop - sectionHeight / 3 &&
         scrollY < sectionTop + sectionHeight
@@ -37,33 +34,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add scroll event listener
   window.addEventListener("scroll", handleScroll);
 
-  // Call handleScroll on page load to set the initial active state
   handleScroll();
 });
 
-// Function to show custom alert
+// custom alert open
+
 function showCustomAlert() {
   const customAlert = document.getElementById("custom-alert");
   const customAlertOverlay = document.getElementById("custom-alert-overlay");
   customAlert.style.display = "block";
-  customAlertOverlay.style.display = "block"; // Show overlay
+  customAlertOverlay.style.display = "block";
 }
 
-// Function to close custom alert
 function closeCustomAlert() {
   const customAlert = document.getElementById("custom-alert");
   const customAlertOverlay = document.getElementById("custom-alert-overlay");
   customAlert.style.display = "none";
-  customAlertOverlay.style.display = "none"; // Hide overlay
+  customAlertOverlay.style.display = "none";
 }
 
-// Event listener for the phone icon
 document
   .querySelector(".bx.bxs-phone")
   .addEventListener("click", function (event) {
     event.preventDefault();
     showCustomAlert();
   });
+
+
+// scroll to the top of the screen
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var scrollButton = document.querySelector('.back-to-top a');
+  
+    scrollButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      var targetId = this.getAttribute('href').substring(1);
+      var targetElement = document.getElementById(targetId);
+  
+      if (targetElement) {
+        var offsetTop = targetElement.offsetTop;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
