@@ -2,6 +2,7 @@
 
 :root {
   --background-color: #000;
+  --background-color-2: #fff;
   --text-color: #d94505;
   --text-color-1: #bababa;
   --hover-color: #bababa;
@@ -76,7 +77,7 @@ nav {
 .links-container a:hover,
 .links-container a:active,
 .links-container a.active {
-  color: var(--hover-color);
+  text-shadow: 1px 2.5px 5px var(--text-color-2);
 }
 
 nav svg {
@@ -237,6 +238,7 @@ nav svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .social-media-icon a {
@@ -313,6 +315,47 @@ nav svg {
   margin-right: 8px;
 }
 
+/* menu navlinks for items */
+#Menu {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: var(--background-color);
+  position: sticky;
+  top: 80px;
+  z-index: 999;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: var(--div-color);
+  color: var(--text-color-2);
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.menu-item a {
+  color: var(--text-color-2);
+}
+
 /* sections */
 .Section {
   width: 100%;
@@ -320,13 +363,9 @@ nav svg {
   align-items: center;
   flex-direction: column;
   margin-top: 0px;
-  padding-top: 30px;
+  scroll-margin-top: 90px;
   margin-bottom: 50px;
   padding-bottom: 30px;
-}
-
-#Appetizers .section-title {
-  margin: 4rem 0;
 }
 
 .section-title {
@@ -469,14 +508,6 @@ footer {
   }
 }
 
-
-
-
-
-
-
-
-
 /* responsive website for mobiles */
 
 @media only screen and (max-width: 768px) {
@@ -563,24 +594,31 @@ footer {
   #Image4,
   #Image5,
   #Image6 {
-    height: 30vh;
+    height: 40vh;
+  }
+
+  /* menu navlinks */
+
+  #Menu {
+    margin-top: 20px;
+    top: 45px;
+  }
+
+  .menu-bar {
+    display: block;
   }
 
   /* section */
 
   .Section {
     margin-bottom: 50px;
-    padding-top: 20px;
-    margin-top: 0px;
-  }
-
-  #Appetizers .section-title {
-    margin: 3rem 0;
+    padding-top: 0px;
+    margin-top: 20px;
   }
 
   .section-title {
     margin: 3rem 0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-decoration: underline;
   }
 
