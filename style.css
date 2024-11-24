@@ -181,7 +181,7 @@ nav {
 
 /* rate and social icons */
 #Rateandsocial {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 }
@@ -403,6 +403,7 @@ footer {
   color: var(--text-color);
   height: 80px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 /* responsive website for tablets */
