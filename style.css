@@ -181,7 +181,7 @@ nav {
 
 /* rate and social icons */
 #Rateandsocial {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -398,12 +398,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   background-color: var(--background-color);
   color: var(--text-color);
   height: 80px;
   font-weight: 600;
-  margin-bottom: 20px;
 }
 
 /* responsive website for tablets */
@@ -416,50 +414,22 @@ footer {
     font-size: 20px;
   }
 
+  #Menu {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: var(--background-color);
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+
   Button {
     width: 130px;
     height: 40px;
-  }
-
-  .links-container {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 200px;
-    background-color: var(--background-color);
-    box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
-    transition: 0.75s ease-out;
-  }
-
-  .links-container a {
-    width: 100%;
-    padding: 20px;
-    justify-content: flex-start;
-  }
-
-  .open-sidebar-button {
-    display: block;
-  }
-
-  .close-sidebar-button {
-    padding: 20px;
-    display: block;
-  }
-
-  #sidebar-active:checked ~ .links-container {
-    right: 0;
-  }
-
-  #sidebar-active:checked ~ #overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
   }
 
   .section-container {
@@ -489,47 +459,6 @@ footer {
   Button {
     width: 130px;
     height: 40px;
-  }
-
-  .links-container {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 200px;
-    background-color: var(--background-color);
-    box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
-    transition: 0.75s ease-out;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 20px;
-    justify-content: flex-start;
-  }
-
-  .open-sidebar-button {
-    display: block;
-  }
-
-  .close-sidebar-button {
-    padding: 20px;
-    display: block;
-  }
-
-  #sidebar-active:checked ~ .links-container {
-    right: 0;
-  }
-
-  #sidebar-active:checked ~ #overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
   }
 
   /* */
@@ -644,7 +573,6 @@ footer {
   }
 
   footer {
-    text-align: center;
     margin-top: 15px;
     font-size: small;
     height: 50px;
