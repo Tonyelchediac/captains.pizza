@@ -620,6 +620,7 @@ footer {
     justify-content: space-between;
     margin-bottom: 0.2rem;
   }
+
   .section-name-and-price-pizza {
     font-size: 11px;
     color: var(--text-color-2);
@@ -630,6 +631,12 @@ footer {
   .section-name-and-price-pizza h1 {
     display: flex;
     justify-content: space-between;
+  }
+
+  .section-name-and-price-pizza h1.price {
+    display: flex;
+    float: right;
+    gap: 10px;
   }
 
   .section-name-and-price-pizza .price p {
