@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <title>Delivery</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: black;
+      }
+      .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #d94505;
+        border-radius: 8px;
+        color: #d94505;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #d94505;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input:hover,
+      textarea:hover,
+      select:hover {
+        border-color: #ff6f3d;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px 20px;
+        background-color: #d94505;
+        color: black;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #errorMessage {
+        color: #d94505;
+        font-size: large;
+        font-size: 14px;
+        margin:20px 0 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Delivery Order</h2>
+      <form id="deliveryForm">
+        <label for="branch">Select Branch</label>
+        <select id="branch" name="branch" required>
+          <option value="">Select a branch</option>
+          <!-- <option value="Douma">Douma Branch</option> -->
+          <option value="Batroun">Batroun Branch</option>
+        </select>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" required />
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street" required />
+
+        <label for="building">Building</label>
+        <input type="text" id="building" name="building" required />
+
+        <label for="floor">Floor</label>
+        <input type="text" id="floor" name="floor" required />
+
+        <!-- Error message placeholder -->
+        <div id="errorMessage"></div>
+
+        <button type="button" id="submitOrder">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      // Retrieve the ordered items from localStorage
+      const orderedItems =
+        JSON.parse(localStorage.getItem("orderedItems")) || {};
+
+      // Log the ordered items to confirm they were transferred
+      console.log("Ordered Items:", orderedItems);
+
+      // Generate random order ID
+      const generateOrderId = () => {
+        return Math.floor(100000 + Math.random() * 900000);
+      };
+
+      // Submit button functionality
+      document.getElementById("submitOrder").addEventListener("click", () => {
+        // Gather form data
+        const branch = document.getElementById("branch").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const city = document.getElementById("city").value;
+        const street = document.getElementById("street").value;
+        const building = document.getElementById("building").value;
+        const floor = document.getElementById("floor").value;
+
+        // Get the error message div
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Clear previous error message
+        errorMessage.textContent = "";
+
+        // Validate form inputs
+        if (!branch || !phoneNumber || !city || !street || !building || !floor) {
+          errorMessage.innerHTML = "<i class='bx bx-message-alt'></i> Please fill in all fields.";
+          return;
+        }
+
+        const location = `${city}, Str: ${street}, Building: ${building}, Floor: ${floor}`;
+        const orderId = generateOrderId();
+
+        let orderItemsText = "";
+        let totalPrice = 0;
+
+        for (const name in orderedItems) {
+          const item = orderedItems[name];
+          orderItemsText += `${name} x${
+            item.quantity
+          } - $${item.totalPrice.toFixed(2)}\n`;
+          totalPrice += item.totalPrice;
+        }
+
+        const message = `
+*Hi Captain's Pizza*
+Order ID: #${orderId}
+I want to order from your amazing wooden food
+From ${branch} Branch
+
+${orderItemsText}
+
+Total Price: *$${totalPrice.toFixed(2)}*
+Phone Number: ${phoneNumber}
+
+and this is the location that i want you to *send the order* to
+Location: ${location}
+
+Thank you Captain's
+      `;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/96171096971?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
+      });
+    </script>
+  </body>
+</html>

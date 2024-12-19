@@ -7,6 +7,13 @@
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       rel="shortcut icon"
       href="images/captain's pizza logo.png"
       type="image/x-icon"
@@ -19,10 +26,16 @@
     <header>
       <nav>
         <div class="logo">Captain's Pizza</div>
+        <div class="order-button-index">
+          <a href="index-menu.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
         </div>
       </nav>
     </header>
-    
+
+    <script></script>
+
     <!-- home image section -->
     <section id="Home">
       <div class="home-container">
@@ -36,13 +49,13 @@
     </section>
 
     <!-- back to top button -->
-     <section id="backtotop">
+    <section id="backtotop">
       <div class="back-to-top">
-        <a href="#Home">
-          <i class='bx bx-up-arrow-circle' ></i>
+        <a>
+          <i class="bx bx-up-arrow-circle"></i>
         </a>
       </div>
-     </section>
+    </section>
 
     <!-- social media icon -->
     <section id="Rateandsocial">
@@ -79,7 +92,9 @@
       <div id="custom-alert-overlay"></div>
       <div id="custom-alert">
         <button class="close-btn" onclick="closeCustomAlert()">X</button>
-        <a href="tel:+961 81 635636" style="margin-top: 70px"><i class="bx bxs-phone"></i>Batroun</a>
+        <a href="tel:+961 81 635636" style="margin-top: 70px"
+          ><i class="bx bxs-phone"></i>Batroun</a
+        >
         <a href="tel:+961 71 883916"><i class="bx bxs-phone"></i>Douma</a>
       </div>
     </section>
@@ -87,17 +102,17 @@
     <!-- menu navlinks -->
     <section id="Menu">
       <div class="menu-bar">
-         <ul class="menu-list">
-            <a href="#Appetizers"><li class="menu-item">Appetizers</li></a>
-            <a href="#Salads"><li class="menu-item">Salads</li></a>
-            <a href="#Pizza"><li class="menu-item">Pizza</li></a>
-            <a href="#Burgers"><li class="menu-item">Burgers</li></a>
-            <a href="#Drinks"><li class="menu-item">Drinks</li></a>
-            <a href="#Add-extra"><li class="menu-item">Add Extra</li></a>
-            <a href="#Arguile"><li class="menu-item">Arguile</li></a>
-         </ul>          
+        <ul class="menu-list">
+          <a href="#Appetizers"><li class="menu-item">Appetizers</li></a>
+          <a href="#Salads"><li class="menu-item">Salads</li></a>
+          <a href="#Pizza"><li class="menu-item">Pizza</li></a>
+          <a href="#Burgers"><li class="menu-item">Burgers</li></a>
+          <a href="#Drinks"><li class="menu-item">Drinks</li></a>
+          <a href="#Add-extra"><li class="menu-item">Add Extra</li></a>
+          <a href="#Arguile"><li class="menu-item">Arguile</li></a>
+        </ul>
       </div>
-   </section>   
+    </section>
 
     <!-- appetizers section -->
     <section id="Appetizers" class="Section">
@@ -633,12 +648,12 @@
         <h2>DRINKS</h2>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
-          <div class="section-name-and-price-pizza" style="display: flex;">
+          <div class="section-name-and-price-pizza" style="display: flex">
             <h1>
               <p>Water</p>
-              <h1 class="price" style="display: flex; gap: 30px;">
+              <h1 class="price" style="display: flex; gap: 30px">
                 <p><em>S: </em>0.50$</p>
                 <p><em>L: </em>1.00$</p>
               </h1>
@@ -650,7 +665,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 30px 10px;">
+      <div class="section-container" style="padding: 30px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Soft Drinks</h1>
@@ -662,7 +677,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Sparkling Water</h1>
@@ -674,7 +689,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Ice Tea</h1>
@@ -686,7 +701,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Local Beer</h1>
@@ -698,7 +713,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Imported Beer</h1>
@@ -720,7 +735,7 @@
         <h2>ADD EXTRA</h2>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Mushroom</h1>
@@ -732,7 +747,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>
@@ -746,7 +761,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>
@@ -760,7 +775,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Ham</h1>
@@ -772,7 +787,7 @@
         </div>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Any Sauce</h1>
@@ -794,7 +809,7 @@
         <h2>ARGUILE</h2>
       </div>
       <!-- item -->
-      <div class="section-container" style="padding: 40px 10px;">
+      <div class="section-container" style="padding: 40px 10px">
         <div class="section-item-container">
           <div class="section-name-and-price">
             <h1>Regular</h1>
@@ -815,7 +830,10 @@
     </section>
 
     <!-- footer -->
-    <footer>&copy; 2024 Captain's Pizza. All Right Reserved. <br> Privacy Policy</footer>
+    <footer>
+      &copy; 2024 Captain's Pizza. All Right Reserved. <br />
+      Privacy Policy
+    </footer>
 
     <script src="script.js"></script>
   </body>
