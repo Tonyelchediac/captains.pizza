@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   --background-color: #000;
@@ -142,13 +142,14 @@ nav {
 /* image section */
 #Image1 {
   height: 50vh;
-  background-image: url("images/rkaka.jpg");
+  background-image: url("images/salad.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
 }
-#Image2 {
+
+#Image2{
   height: 50vh;
   background-image: url("images/pizza 3l tawle ba3 blur bg.jpg");
   background-repeat: no-repeat;
@@ -156,6 +157,7 @@ nav {
   background-attachment: fixed;
   background-position: center;
 }
+
 #Image3 {
   height: 50vh;
   background-image: url("images/hamburger.jpg");
@@ -164,6 +166,7 @@ nav {
   background-attachment: fixed;
   background-position: center;
 }
+
 #Image4 {
   height: 50vh;
   background-image: url("images/drinks.jpg");
@@ -172,6 +175,7 @@ nav {
   background-attachment: fixed;
   background-position: center;
 }
+
 #Image5 {
   height: 50vh;
   background-image: url("images/pizza 3l tawle.jpg");
@@ -180,6 +184,7 @@ nav {
   background-attachment: fixed;
   background-position: center;
 }
+
 #Image6 {
   height: 50vh;
   background-image: url("images/arguile.jpg");
@@ -314,22 +319,35 @@ nav {
   display: inline-block;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
 }
 
 .menu-item {
-  display: inline-block;
-  padding: 15px 30px;
-  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  width: 150px;
+  height: 65px;
+  text-align: center;
+  margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   background-color: var(--div-color);
   color: var(--text-color-2);
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .menu-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  margin: 10px;
   color: var(--text-color-2);
+  font-size: 16px;
+  text-align: center;
 }
 
 /* sections */
@@ -361,7 +379,7 @@ nav {
   border-radius: 25px;
   width: 100%;
   max-width: 70%;
-  padding: 1rem;
+  padding: 40px 10px;
 }
 
 .section-container img {
@@ -439,7 +457,7 @@ footer {
     top: 0;
     right: -100%;
     z-index: 10;
-    width: 200px;
+    width: 100%;
     background-color: var(--background-color);
     box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
@@ -495,16 +513,6 @@ footer {
     margin-top: 50px;
   }
 
-  /* images */
-  #Image1,
-  #Image2,
-  #Image3,
-  #Image4,
-  #Image5,
-  #Image6 {
-    height: 40vh;
-  }
-
   /* menu navlinks */
 
   #Menu {
@@ -514,6 +522,12 @@ footer {
 
   .menu-bar {
     display: block;
+  }
+
+  .menu-item a {
+    display: block;
+    width: 100%;
+    margin-left: 200px;
   }
 
   /* section */
@@ -539,14 +553,9 @@ footer {
     border-radius: 15px;
     width: 90%;
     max-width: 90%;
-    padding: 0.5rem;
-  }
+    padding: 30px 10px;
+ }
 
-  .section-container img {
-    width: 90px;
-    border-radius: 20px;
-    padding: 10px;
-  }
 
   .section-item-container {
     display: flex;
@@ -566,7 +575,8 @@ footer {
   .section-name-and-price-pizza {
     font-size: 11px;
     color: var(--text-color-2);
-    display: block;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 0.2rem;
   }
 
@@ -597,4 +607,8 @@ footer {
     font-size: small;
     height: 50px;
   }
+}
+
+.menu-item {
+  font-size: 18px; /* Professional size for menu items */
 }
