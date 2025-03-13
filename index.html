@@ -1,810 +1,990 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="shortcut icon"
-      href="images/captain's pizza logo.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Captain's Pizza</title>
+    <title>Food Ordering</title>
+    <link rel="shortcut icon" href="images/WoodOven inside Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   </head>
   <body>
+    <!-- Pre Loader -->
+    <div id="preloader">
+      <div class="dot1"><i class="fa-solid fa-burger"></i></div>
+      <div class="dot2"><i class="fa-solid fa-pizza-slice"></i></div>
+      <div class="dot3"><i class="fa-solid fa-mug-saucer"></i></div>
+    </div>
+
     <!-- header -->
     <header>
-      <nav>
-        <div class="logo">Captain's Pizza</div>
-        <div class="order-button-index">
-          <a href="index-menu.html">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
-      </nav>
+      <h1>captain's pizza</h1>
+      <button id="cart-btn">
+        <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+      </button>
     </header>
 
-    <script></script>
-
-    <!-- home image section -->
-    <section id="Home">
+    <!-- HOME -->
+    <section id="home">
       <div class="home-container">
-        <div class="logo-wrapper">
-          <img
-            src="images/WoodOven inside Logo.png"
-            alt="Captain's Pizza Logo"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- back to top button -->
-    <section id="backtotop">
-      <div class="back-to-top">
-        <a>
-          <i class="bx bx-up-arrow-circle"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- social media icon -->
-    <section id="Rateandsocial">
-      <div class="rate-and-icon">
-        <p>Dollar Rate = 90,000L.L</p>
+        <p class="home-title">captain's pizza</p>
+        <p class="home-des">wood oven</p>
         <div class="social-media-icon">
-          <div class="social-media-icon-and-name">
-            <a href=""><i class="bx bxs-phone"></i></a>
-            <p>phone</p>
+          <div class="social-media">
+            <a href="">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            <p>contact</p>
           </div>
-          <div class="social-media-icon-and-name">
+          <div class="social-media">
             <a
-              href="https://www.google.com/maps/d/u/0/edit?mid=1K0riTFrMiZmBJa9nIjDUgYuA73XvmbY&usp=sharing"
-              ><i class="bx bx-current-location"></i
-            ></a>
+              href="https://www.google.com/maps/d/u/0/edit?mid=1K0riTFrMiZmBJa9nIjDUgYuA73XvmbY&usp=sharing">
+              <i class="fa-solid fa-location-dot"></i>            </a>
             <p>location</p>
           </div>
-          <div class="social-media-icon-and-name">
-            <a href="https://instagram.com/captains.pizza"
-              ><i class="bx bxl-instagram"></i
-            ></a>
+          <div class="social-media">
+            <a href="https://instagram.com/captains.pizza">
+                <i class="fa-brands fa-instagram"></i>            </a>
             <p>instagram</p>
           </div>
-          <div class="social-media-icon-and-name">
+          <div class="social-media">
             <a
-              href="https://www.facebook.com/profile.php?id=100066420747274&mibextid=ZbWKwL"
-              ><i class="bx bxl-facebook"></i
-            ></a>
+              href="https://www.facebook.com/profile.php?id=100066420747274&mibextid=ZbWKwL">
+              <i class="fa-brands fa-facebook-f"></i>            </a>
             <p>facebook</p>
           </div>
         </div>
       </div>
-      <!-- Custom Alert Overlay -->
-      <div id="custom-alert-overlay"></div>
-      <div id="custom-alert">
-        <button class="close-btn" onclick="closeCustomAlert()">X</button>
-        <a href="tel:+961 81 635636" style="margin-top: 70px"
-          ><i class="bx bxs-phone"></i>Batroun</a
-        >
-        <a href="tel:+961 71 883916"><i class="bx bxs-phone"></i>Douma</a>
+    </section>
+
+    <!-- MENU ORDER -->
+
+    <div class="menu-title">
+      <p>menu</p>
+    </div>
+
+    <section id="menuButtons">
+      <div class="menu-buttons">
+        <a href="#Appetizers"><button>Appetizers</button></a>
+        <a href="#Salads"><button>Salads</button></a>
+        <a href="#Pizza"><button>Pizza</button></a>
+        <a href="#Burgers"><button>Burgers</button></a>
+        <a href="#Sandwiches"><button>Sandwiches</button></a>
+        <a href="#Drinks"><button>Drinks</button></a>
       </div>
     </section>
 
-    <!-- menu navlinks -->
-    <section id="Menu">
-      <div class="menu-bar">
-        <ul class="menu-list">
-          <a href="#Appetizers"><li class="menu-item">Appetizers</li></a>
-          <a href="#Salads"><li class="menu-item">Salads</li></a>
-          <a href="#Pizza"><li class="menu-item">Pizza</li></a>
-          <a href="#Burgers"><li class="menu-item">Burgers</li></a>
-          <a href="#Drinks"><li class="menu-item">Drinks</li></a>
-          <a href="#Add-extra"><li class="menu-item">Add Extra</li></a>
-          <a href="#Arguile"><li class="menu-item">Arguile</li></a>
-        </ul>
-      </div>
-    </section>
+    <div class="menu">
+      <!-- appetizers menu -->
 
-    <!-- appetizers section -->
-    <section id="Appetizers" class="Section">
-      <div class="section-title">
-        <h2>APPETIZERS</h2>
+      <div class="menu-title">
+        <p id="Appetizers">appetizers</p>
       </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Fries</h1>
-            <h1>3.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Twisters</h1>
-            <h1>4.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Focaccia</h1>
-            <h1>4.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Nachos</h1>
-            <h1>5.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Italian Rolls</h1>
-            <h1>7.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Chicken Sticks</h1>
-            <h1>4.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Nuggets</h1>
-            <h1>4.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>
-              <p>Chicken Wings</p>
-              <span>Servered 6 pieces</span>
-            </h1>
-            <h1>6.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Buffalo, BBQ, Garlic Parmesan, Lemon Pepper</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>
-              <p>Chicken Wings</p>
-              <span>Servered 10 pieces</span>
-            </h1>
-            <h1>8.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Buffalo, BBQ, Garlic Parmesan, Lemon Pepper</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Combo</h1>
-            <h1>9.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              3 Chicken Sticks, 3 Italian Rolls, 3 Mozzarella Sticks Fries,
-              Garlic Aoli Sauce
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Submarine</h1>
-            <h1>8.25$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Lettuce, Tomato, Olive, Mushroom, Mozzarela Cheese, Ham, Mayo,
-              Mustard
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image1"></section>
+      <div class="item" data-name="Mozzarella Sticks" data-price="6.00">
+        <img src="images/mozzarella-sticks.jpg" alt="Mozzarella Sticks" />
+        <div class="itemnameanddes">
+          <h2>Mozzarella Sticks</h2>
+          <p class="description">
+            6 Crispy breaded mozzarella sticks served with marinara sauce.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- salads section -->
-    <section id="Salads" class="Section">
-      <div class="section-title">
-        <h2>SALADS</h2>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Chicken Ceaser</h1>
-            <h1>8.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Romaine Lettuce, Chicken, Croutons, Parmesan Cheese Mixed with
-              Caesar Dressing Sauce
-            </h2>
+      <div class="item" data-name="Garlic Bread" data-price="5.00">
+        <img src="images/garlic-bread.jpg" alt="Garlic Bread" />
+        <div class="itemnameanddes">
+          <h2>Garlic Bread</h2>
+          <p class="description">
+            6 Toasted bread topped with garlic butter and herbs.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$5.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
           </div>
         </div>
       </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Rocca Salad</h1>
-            <h1>8.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Rocca, Tomato, Mushroom, Walnuts, Lemon Oil Sauce</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Chef Salad</h1>
-            <h1>9.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Lettuce, Chicken, Hamand Cheese, Eggs, Corn, Olives, Cucumber,
-              Tomato, Mixed with Lemon Mayo Sauce
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image2"></section>
+      <div class="item" data-name="French Fries" data-price="4.00">
+        <img src="images/french-fries.jpg" alt="French Fries" />
+        <div class="itemnameanddes">
+          <h2>French Fries</h2>
+          <p class="description">Crispy golden fries served with ketchup.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$4.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- pizza section -->
-    <section id="Pizza" class="Section">
-      <div class="section-title">
-        <h2>PIZZA</h2>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Margerita</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>6.50$</p>
-              <p><em>L: </em>7.50$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Fresh Basil</h2>
+      <div class="item" data-name="Chicken Sticks" data-price="7.00">
+        <img src="images/chicken-sticks.jpg" alt="Chicken Sticks" />
+        <div class="itemnameanddes">
+          <h2>Chicken Sticks</h2>
+          <p class="description">
+            10 Crispy fried chicken sticks served with a choice of dipping
+            sauce.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$7.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
           </div>
         </div>
       </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Vegeterian</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.50$</p>
-              <p><em>L: </em>8.00$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom,
-              Onion, Black Olives
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Classic</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.00$</p>
-              <p><em>L: </em>7.75$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Artichoke</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.00$</p>
-              <p><em>L: </em>8.00$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Pepperoni</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.50$</p>
-              <p><em>L: </em>8.50$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Sweet Pepperoni</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>8.50$</p>
-              <p><em>L: </em>9.50$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Pepperoni, Honey, Chili Oil</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Captain's</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.50$</p>
-              <p><em>L: </em>8.50$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry
-              Tomato, Balsamic Sauce
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Village</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.00$</p>
-              <p><em>L: </em>7.75$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Eggplant</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.00$</p>
-              <p><em>L: </em>7.75$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 1rem 0.5rem">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Chicken Pizza</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.75$</p>
-              <p><em>L: </em>8.75$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives,
-              Mushroom, Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Four Cheese</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.50$</p>
-              <p><em>L: </em>8.50$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel ,Parmesan
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza">
-            <h1>
-              <p>Toscana</p>
-            </h1>
-            <h1 class="price">
-              <p><em>M: </em>7.50$</p>
-              <p><em>L: </em>8.25$</p>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried
-              Tomato, Fresh Basil
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image3"></section>
+      <div class="item" data-name="Calamari" data-price="9.00">
+        <img src="images/calamari.jpg" alt="Calamari" />
+        <div class="itemnameanddes">
+          <h2>Calamari</h2>
+          <p class="description">
+            10 Crispy fried calamari rings served with tartar sauce.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$9.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- burgers section -->
-    <section id="Burgers" class="Section">
-      <div class="section-title">
-        <h2>BURGERS</h2>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Classic Burger</h1>
-            <h1>8.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Beef, Tomato, Onion, Cheddar Cheese, Mayo, Mustard Ketchup</h2>
+      <div class="item" data-name="Potato Wedges" data-price="5.50">
+        <img src="images/potato-wedges.jpg" alt="Potato Wedges" />
+        <div class="itemnameanddes">
+          <h2>Potato Wedges</h2>
+          <p class="description">
+            Seasoned potato wedges served with a side of sour cream.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$5.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
           </div>
         </div>
       </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Chicken Burger</h1>
-            <h1>8.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Chicken breast, Pickles, Mushroom, Lettuce, Garlic Sauce</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Mushroom Cap Burger</h1>
-            <h1>10.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Beef, Stuffed Mushroom , Lolorosso, Pickles, Onion Special Sauce
-            </h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>C.C.C. Burger</h1>
-            <h1>9.50$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>
-              Crispy Chicken, Lolorosso, Pickles, Tomato, Garlic Aoli Sauce
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image4"></section>
+      <!-- salad menu -->
 
-    <!-- drinks section -->
-    <section id="Drinks" class="Section">
-      <div class="section-title">
-        <h2>DRINKS</h2>
+      <div class="menu-title">
+        <p id="Salads">salads</p>
       </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price-pizza" style="display: flex">
-            <h1>
-              <p>Water</p>
-              <h1 class="price" style="display: flex; gap: 30px">
-                <p><em>S: </em>0.50$</p>
-                <p><em>L: </em>1.00$</p>
-              </h1>
-            </h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 30px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Soft Drinks</h1>
-            <h1>1.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>Pepsi, Miranda, 7up</h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Sparkling Water</h1>
-            <h1>2.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Ice Tea</h1>
-            <h1>2.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Local Beer</h1>
-            <h1>2.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Imported Beer</h1>
-            <h1>3.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image5"></section>
+      <div class="item" data-name="Caesar Salad" data-price="7.00">
+        <img src="images/caesar-salad.jpg" alt="Caesar Salad" />
+        <div class="itemnameanddes">
+          <h2>Caesar Salad</h2>
+          <p class="description">
+            Crisp romaine lettuce, parmesan cheese, croutons, and Caesar
+            dressing.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$7.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- add extra section -->
-    <section id="Add-extra" class="Section">
-      <div class="section-title">
-        <h2>ADD EXTRA</h2>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Mushroom</h1>
-            <h1>0.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
+      <div class="item" data-name="Chef Salad" data-price="8.00">
+        <img src="images/chef-salad.jpg" alt="Chef Salad" />
+        <div class="itemnameanddes">
+          <h2>Chef Salad</h2>
+          <p class="description">
+            Mixed greens with turkey, ham, cheese, boiled egg, and ranch
+            dressing.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$8.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
           </div>
         </div>
       </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>
-              <p>Cheese</p>
-            </h1>
-            <h1>0.75$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>
-              <p>Pepperoni</p>
-            </h1>
-            <h1>1.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Ham</h1>
-            <h1>1.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Any Sauce</h1>
-            <h1>2.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2></h2>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- image section -->
-    <section id="Image6"></section>
-
-    <!-- arguile section -->
-    <section id="Arguile" class="Section">
-      <div class="section-title">
-        <h2>ARGUILE</h2>
-      </div>
-      <!-- item -->
-      <div class="section-container" style="padding: 40px 10px">
-        <div class="section-item-container">
-          <div class="section-name-and-price">
-            <h1>Regular</h1>
-            <h1>5.00$</h1>
-          </div>
-          <div class="section-item-description">
-            <h2>We have all flavors</h2>
+      <div class="item" data-name="Pasta Salad" data-price="6.50">
+        <img src="images/pasta-salad.jpg" alt="Pasta Salad" />
+        <div class="itemnameanddes">
+          <h2>Pasta Salad</h2>
+          <p class="description">
+            Cold pasta tossed with fresh vegetables, feta cheese, and Italian
+            dressing.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- social media icon -->
-    <section id="Rateandsocial">
-      <div class="rate-and-icon">
-        <p>Dollar Rate = 90,000L.L</p>
+      <!-- pizza menu -->
+
+      <div class="menu-title">
+        <p id="Pizza">pizza</p>
       </div>
-    </section>
 
-    <!-- footer -->
-    <footer>
-      &copy; 2024 Captain's Pizza. All Right Reserved. <br />
-      Privacy Policy
-    </footer>
+      <div class="item" data-name="Margherita Pizza" data-price="8.00">
+        <img src="images/margherita.jpg" alt="Margherita Pizza" />
+        <div class="itemnameanddes">
+          <h2>Margherita Pizza</h2>
+          <p class="description">Tomato Sauce, Mozzarella Cheese, Basil</p>
+        </div>
+        <div class="priceandorder">
+          <p>$8.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Pepperoni Pizza" data-price="10.00">
+        <img src="images/pepperoni.jpg" alt="Pepperoni Pizza" />
+        <div class="itemnameanddes">
+          <h2>Pepperoni Pizza</h2>
+          <p class="description">Tomato Sauce, Mozzarella Cheese, Pepperoni</p>
+        </div>
+        <div class="priceandorder">
+          <p>$10.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Hawaiian Pizza" data-price="11.00">
+        <img src="images/hawaiian.jpg" alt="Hawaiian Pizza" />
+        <div class="itemnameanddes">
+          <h2>Hawaiian Pizza</h2>
+          <p class="description">
+            Tomato Sauce, Mozzarella Cheese, Ham, Pineapple
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$11.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="BBQ Chicken Pizza" data-price="12.00">
+        <img src="images/chicken.jpg" alt="BBQ Chicken Pizza" />
+        <div class="itemnameanddes">
+          <h2>BBQ Chicken Pizza</h2>
+          <p class="description">
+            BBQ Sauce, Mozzarella Cheese, Grilled Chicken, Onions
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$12.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Four Cheese Pizza" data-price="13.00">
+        <img src="images/four-cheese.jpg" alt="Four Cheese Pizza" />
+        <div class="itemnameanddes">
+          <h2>Four Cheese Pizza</h2>
+          <p class="description">Mozzarella, Parmesan, Gorgonzola, Ricotta</p>
+        </div>
+        <div class="priceandorder">
+          <p>$13.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Meat Lovers Pizza" data-price="14.00">
+        <img src="images/meat-lovers.jpg" alt="Meat Lovers Pizza" />
+        <div class="itemnameanddes">
+          <h2>Meat Lovers Pizza</h2>
+          <p class="description">
+            Tomato Sauce, Mozzarella Cheese, Pepperoni, Sausage, Bacon, Ham
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$14.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Veggie Pizza" data-price="10.50">
+        <img src="images/veggie.jpg" alt="Veggie Pizza" />
+        <div class="itemnameanddes">
+          <h2>Veggie Pizza</h2>
+          <p class="description">
+            Tomato Sauce, Mozzarella Cheese, Bell Peppers, Mushrooms, Onions,
+            Olives
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$10.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Truffle Pizza" data-price="15.00">
+        <img src="images/truffle.jpg" alt="Truffle Pizza" />
+        <div class="itemnameanddes">
+          <h2>Truffle Pizza</h2>
+          <p class="description">
+            White Sauce, Mozzarella Cheese, Truffle Oil, Mushrooms
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$15.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- burger menu -->
+
+      <div class="menu-title">
+        <p id="Burgers">burgers</p>
+      </div>
+
+      <div class="item" data-name="Cheese burger" data-price="10.00">
+        <img src="images/cheese-burger.jpg" alt="Classic Cheeseburger" />
+        <div class="itemnameanddes">
+          <h2>Cheese burger</h2>
+          <p class="description">
+            Beef patty with melted cheddar, lettuce, tomato, onions, pickles,
+            and condiments.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$10.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Bacon Burger" data-price="12.00">
+        <img src="images/bacon-burger.jpg" alt="Bacon Burger" />
+        <div class="itemnameanddes">
+          <h2>Bacon Burger</h2>
+          <p class="description">
+            Classic burger topped with crispy bacon, cheese, lettuce, and
+            tomato.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$12.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Veggie Burger" data-price="9.00">
+        <img src="images/veggie-burger.jpg" alt="Veggie Burger" />
+        <div class="itemnameanddes">
+          <h2>Veggie Burger</h2>
+          <p class="description">
+            Plant-based burger made with vegetables, beans, or legumes.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$9.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Mushroom Swiss Burger" data-price="11.00">
+        <img
+          src="images/mushroom-swiss-burger.jpg"
+          alt="Mushroom Swiss Burger"
+        />
+        <div class="itemnameanddes">
+          <h2>Mush Swiss Burger</h2>
+          <p class="description">
+            Beef patty topped with sautéed mushrooms and Swiss cheese.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$11.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="BBQ Burger" data-price="12.50">
+        <img src="images/bbq-burger.jpg" alt="BBQ Burger" />
+        <div class="itemnameanddes">
+          <h2>BBQ Burger</h2>
+          <p class="description">
+            Burger topped with barbecue sauce, cheese, bacon, and onion rings.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$12.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Chicken Burger" data-price="10.50">
+        <img src="images/chicken-burger.jpg" alt="Chicken Burger" />
+        <div class="itemnameanddes">
+          <h2>Chicken Burger</h2>
+          <p class="description">
+            Grilled or fried chicken patty with lettuce, tomato, and mayo.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$10.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Fish Burger" data-price="11.50">
+        <img src="images/fish-burger.jpg" alt="Fish Burger" />
+        <div class="itemnameanddes">
+          <h2>Fish Burger</h2>
+          <p class="description">
+            Fish fillet burger, typically with cod or salmon, and traditional
+            toppings.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$11.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- sandwiches menu -->
+
+      <div class="menu-title">
+        <p id="Sandwiches">sandwiches</p>
+      </div>
+
+      <div class="item" data-name="Shawarma Chicken" data-price="6.50">
+        <img src="images/shawarma_chicken.jpg" alt="Shawarma Chicken" />
+        <div class="itemnameanddes">
+          <h2>Shawarma Chicken</h2>
+          <p class="description">
+            Marinated chicken slices, garlic sauce, pickles, and fries wrapped
+            in pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Shawarma Beef" data-price="7.00">
+        <img src="images/shawarma_beef.jpg" alt="Shawarma Beef" />
+        <div class="itemnameanddes">
+          <h2>Shawarma Beef</h2>
+          <p class="description">
+            Tender beef strips, tahini sauce, tomatoes, onions, and pickles
+            wrapped in pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$7.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Falafel Sandwich" data-price="5.00">
+        <img src="images/falafel_sandwich.jpg" alt="Falafel Sandwich" />
+        <div class="itemnameanddes">
+          <h2>Falafel Sandwich</h2>
+          <p class="description">
+            Crispy falafel patties, tahini sauce, tomatoes, pickles, and parsley
+            wrapped in pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$5.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Kafta Sandwich" data-price="6.50">
+        <img src="images/kafta_sandwich.jpg" alt="Kafta Sandwich" />
+        <div class="itemnameanddes">
+          <h2>Kafta Sandwich</h2>
+          <p class="description">
+            Grilled kafta (ground beef with spices), hummus, tomatoes, parsley,
+            and pickles wrapped in pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Soujouk Sandwich" data-price="7.00">
+        <img src="images/soujouk_sandwich.jpg" alt="Soujouk Sandwich" />
+        <div class="itemnameanddes">
+          <h2>Soujouk Sandwich</h2>
+          <p class="description">
+            Spicy Armenian sausage, tomatoes, pickles, and garlic sauce wrapped
+            in pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$7.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Fajitas Sandwich" data-price="7.50">
+        <img src="images/fajitas_sandwich.jpg" alt="Fajitas Sandwich" />
+        <div class="itemnameanddes">
+          <h2>Fajitas Sandwich</h2>
+          <p class="description">
+            Grilled chicken strips with bell peppers, onions, and melted cheese,
+            served with a special fajita sauce in pita or tortilla bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$7.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Tawook Sandwich" data-price="6.50">
+        <img src="images/tawook_sandwich.jpg" alt="Tawook Sandwich" />
+        <div class="itemnameanddes">
+          <h2>Tawook Sandwich</h2>
+          <p class="description">
+            Marinated grilled chicken skewers, garlic sauce, pickles, and fries
+            wrapped in Lebanese pita bread.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- drink menu -->
+
+      <div class="menu-title">
+        <p id="Drinks">drinks</p>
+      </div>
+
+      <div class="item" data-name="Expresso" data-price="1.50">
+        <img src="images/expresso.jpg" alt="Pepsi" />
+        <div class="itemnameanddes">
+          <h2>Expresso</h2>
+          <p class="description">Refreshing with expresso.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$1.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Nescafe" data-price="2.50">
+        <img src="images/nescafe.jpg" alt="Pepsi" />
+        <div class="itemnameanddes">
+          <h2>Nescafe</h2>
+          <p class="description">3in1.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Americano" data-price="2.50">
+        <img src="images/americano.jpg" alt="Pepsi" />
+        <div class="itemnameanddes">
+          <h2>Americano</h2>
+          <p class="description">Black.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.50</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Pepsi" data-price="2.00">
+        <img src="images/pepsi.jpg" alt="Pepsi" />
+        <div class="itemnameanddes">
+          <h2>Pepsi</h2>
+          <p class="description">Refreshing carbonated soft drink.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Pepsi Diet" data-price="2.00">
+        <img src="images/pepsi-diet.jpg" alt="Pepsi Diet" />
+        <div class="itemnameanddes">
+          <h2>Pepsi Diet</h2>
+          <p class="description">Refreshing carbonated soft drink.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="7up" data-price="2.00">
+        <img src="images/7up.jpg" alt="7Up" />
+        <div class="itemnameanddes">
+          <h2>7up</h2>
+          <p class="description">Lemon-lime flavored soda.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="7up Diet" data-price="2.00">
+        <img src="images/7up-diet.jpg" alt="7Up" />
+        <div class="itemnameanddes">
+          <h2>7up Diet</h2>
+          <p class="description">Lemon-lime flavored soda.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Miranda" data-price="2.00">
+        <img src="images/miranda.jpg" alt="Miranda" />
+        <div class="itemnameanddes">
+          <h2>Miranda</h2>
+          <p class="description">Fruity and fizzy orange-flavored drink.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Miranda Diet" data-price="2.00">
+        <img src="images/miranda-diet.jpg" alt="Miranda diet" />
+        <div class="itemnameanddes">
+          <h2>Miranda Diet</h2>
+          <p class="description">Fruity and fizzy orange-flavored drink.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$2.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Local Beer" data-price="5.00">
+        <img src="images/local-beer.jpg" alt="Local Beer" />
+        <div class="itemnameanddes">
+          <h2>Local Beer</h2>
+          <p class="description">Refreshing locally brewed beer.</p>
+        </div>
+        <div class="priceandorder">
+          <p>$5.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Imported Beer" data-price="6.00">
+        <img src="images/imported-beer.jpg" alt="Imported Beer" />
+        <div class="itemnameanddes">
+          <h2>Imported Beer</h2>
+          <p class="description">
+            Premium quality beer from top international breweries.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$6.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" data-name="Energy Drink" data-price="4.00">
+        <img src="images/energy-drink.jpg" alt="Energy Drink" />
+        <div class="itemnameanddes">
+          <h2>Energy Drink</h2>
+          <p class="description">
+            Boost your energy with a refreshing and revitalizing drink.
+          </p>
+        </div>
+        <div class="priceandorder">
+          <p>$4.00</p>
+          <button class="add-to-order">+</button>
+          <div class="quantity hidden">
+            <button class="minus">-</button>
+            <span class="qty">1</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart" class="cart-container">
+      <h2>Cart</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-buttons">
+        <h2 class="total">Total:</h2>
+        <button id="callTakeawayOrder">Order Type: Takeaway</button>
+        <button id="order-btn-delivery">Order Type: Delivery</button>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="close-cart">Close</button>
+      </div>
+    </div>
+
+    <div id="Takeaway">
+      <div class="takeaway-container">
+        <h2>Takeaway</h2>
+        <p>Enter your phone number:</p>
+        <input type="number" />
+        <p>Select Branch:</p>
+        <select name="branch" id="selectBranch">
+          <option value="Select">Select</option>
+          <option value="Assia">Assia</option>
+          <option value="Batroun">Batroun</option>
+          <option value="Douma">Douma</option>
+          <option value="Jbeil">Jbeil</option>
+          <option value="Tannourine">Tannourine</option>
+          <option value="Kaslik">Kaslik</option>
+        </select>
+        <button id="order-btn">Order</button>
+        <button class="closeTakeaway">Close</button>
+      </div>
+    </div>
+
+    <div id="Delivery">
+      <div class="delivery-container">
+        <h2>Delivery</h2>
+        <p class="allTotal-for-dv">
+          Total: <span id="deliveryTotal">$0.00</span>
+        </p>
+        <h1>Enter your full name:</h1>
+        <input type="text" name="name" id="name" />
+        <h1>Enter phone number:</h1>
+        <input type="number" name="phone" id="phone" />
+        <h1>Select Your Location:</h1>
+        <div id="map"></div>
+        <h1>Select the nearby branch:</h1>
+        <select name="branch" id="selectBranchDelivery">
+          <option value="Select">Select</option>
+          <option value="Assia">Assia</option>
+          <option value="Batroun">Batroun</option>
+          <option value="Douma">Douma</option>
+          <option value="Jbeil">Jbeil</option>
+          <option value="Tannourine">Tannourine</option>
+          <option value="Kaslik">Kaslik</option>
+        </select>
+        <button id="delivery-order-btn">Order Now</button>
+        <button class="closeDelivery">Close</button>
+      </div>
+    </div>
+
+    <footer> <p>&copy;</p> captain's pizza || all right reserved. TX</footer>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function () {
+        loader.classList.add("fade-out");
+        setTimeout(function () {
+          loader.style.display = "none";
+        }, 500);
+      });
+    </script>
   </body>
 </html>

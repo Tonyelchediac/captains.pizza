@@ -1,322 +1,369 @@
-function showCustomAlert() {
-  const customAlert = document.getElementById("custom-alert");
-  const customAlertOverlay = document.getElementById("custom-alert-overlay");
-  customAlert.style.display = "block";
-  customAlertOverlay.style.display = "block";
-}
+let cart = [];
+const cartBtn = document.getElementById("cart-btn");
+const cartContainerButtons = document.querySelector(".cart-buttons");
+const cartCount = document.getElementById("cart-count");
+const cartItems = document.getElementById("cart-items");
+const cartContainer = document.getElementById("cart");
+const callTakeaway = document.getElementById("callTakeawayOrder");
+const orderBtn = document.getElementById("order-btn");
+const orderBtnDelivery = document.getElementById("order-btn-delivery");
+const closeCartBtn = document.getElementById("close-cart");
+const clearCartBtn = document.getElementById("clear-cart");
+const takeawayAlert = document.getElementById("Takeaway");
+const closeTakeaway = document.querySelector(".closeTakeaway");
+const deliveryAlert = document.getElementById("Delivery");
+const closeDelivery = document.querySelector(".closeDelivery");
 
-function closeCustomAlert() {
-  const customAlert = document.getElementById("custom-alert");
-  const customAlertOverlay = document.getElementById("custom-alert-overlay");
-  customAlert.style.display = "none";
-  customAlertOverlay.style.display = "none";
-}
-
-document
-  .querySelector(".bx.bxs-phone")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    showCustomAlert();
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var homeBackButton = document.getElementById('backtotop');
-    
-    homeBackButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  });
-
-document.addEventListener('DOMContentLoaded', function() {
-  var homeBackButton = document.getElementById('homeBack');
-  
-  homeBackButton.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+// Open cart
+cartBtn.addEventListener("click", function () {
+    cartContainer.classList.add("active");
+    cartContainerButtons.classList.add("active");
+    displayCartItems();
 });
 
-const orderButton = document.getElementById('orderButton');
-const orderFrame = document.getElementById('orderFrame');
-const closeButton = document.getElementById('closeButton');
-const orderCount = document.getElementById('orderCount');
-const emptyMessage = document.getElementById('emptyMessage');
-const orderItems = document.getElementById('orderItems');
-const totalAmount = document.getElementById('totalAmount');
+// Close cart
+closeCartBtn.addEventListener("click", function () {
+    cartContainer.classList.remove("active");
+    cartContainerButtons.classList.remove("active");
+});
+
+// Handle adding items
+document.querySelectorAll(".item").forEach(item => {
+    item.addEventListener("click", function (event) {
+        const target = event.target;
+
+        // Handle "Add to Order" button
+        if (target.classList.contains("add-to-order")) {
+            const name = item.getAttribute("data-name");
+            const price = parseFloat(item.getAttribute("data-price"));
+
+            // Show the quantity controls and hide the "Add to Order" button
+            const quantityDiv = item.querySelector(".quantity");
+            quantityDiv.classList.remove("hidden");
+            target.classList.add("hidden");
+
+            // Update the cart
+            let cartItem = cart.find(cartItem => cartItem.name === name);
+            if (!cartItem) {
+                cart.push({ name, price, quantity: 1 });
+            } else {
+                cartItem.quantity++;
+            }
+
+            // Update the cart count and display items
+            updateCartCount();
+            displayCartItems();
+        }
+
+        // Handle "+" button
+        if (target.classList.contains("plus")) {
+            const name = item.getAttribute("data-name");
+            let cartItem = cart.find(cartItem => cartItem.name === name);
+            if (cartItem) {
+                cartItem.quantity++;
+                item.querySelector(".qty").textContent = cartItem.quantity;
+            }
+            updateCartCount();
+            displayCartItems();
+        }
+
+        // Handle "-" button
+        if (target.classList.contains("minus")) {
+            const name = item.getAttribute("data-name");
+            let cartItem = cart.find(cartItem => cartItem.name === name);
+            if (cartItem) {
+                if (cartItem.quantity > 1) {
+                    cartItem.quantity--;
+                    item.querySelector(".qty").textContent = cartItem.quantity;
+                } else {
+                    cart = cart.filter(cartItem => cartItem.name !== name);
+                    item.querySelector(".quantity").classList.add("hidden");
+                    item.querySelector(".add-to-order").classList.remove("hidden");
+                }
+            }
+            updateCartCount();
+            displayCartItems();
+        }
+    });
+});
+
+// Handle + and - buttons
+document.querySelectorAll(".plus").forEach(button => {
+    button.addEventListener("click", function () {
+        let item = this.parentElement.parentElement;
+        let name = item.getAttribute("data-name");
+        let cartItem = cart.find(cartItem => cartItem.name === name);
+
+        if (cartItem) {
+            cartItem.quantity++;
+            item.querySelector(".qty").textContent = cartItem.quantity;
+        }
+        updateCartCount();
+        displayCartItems();
+    });
+});
+
+document.querySelectorAll(".minus").forEach(button => {
+    button.addEventListener("click", function () {
+        let item = this.parentElement.parentElement;
+        let name = item.getAttribute("data-name");
+        let cartItem = cart.find(cartItem => cartItem.name === name);
+        if (cartItem) {
+            if (cartItem.quantity > 1) {
+                cartItem.quantity--;
+                item.querySelector(".qty").textContent = cartItem.quantity;
+            } else {
+                cart = cart.filter(cartItem => cartItem.name !== name);
+                item.querySelector(".quantity").classList.add("hidden");
+                item.querySelector(".add-to-order").classList.remove("hidden");
+            }
+        }
+        updateCartCount();
+        displayCartItems();
+    });
+});
+
+// Update cart count
+function updateCartCount() {
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    if(totalItems == 0){
+        cartCount.style.fontWeight = "bold";
+        cartCount.style.position = "absolute";
+        cartCount.style.top = "10px";
+        cartCount.style.right = "15px";
+        cartCount.style.fontSize = "12px";
+        cartCount.style.height = "20px";
+        cartCount.style.width = "20px";
+        cartCount.style.display = "flex";
+        cartCount.style.justifyContent = "center";
+        cartCount.style.alignItems = "center";
+        cartCount.style.color = "#ffa500";
+        cartCount.style.backgroundColor = "transparent";
+    } else {
+        cartCount.style.fontWeight = "bold";
+        cartCount.style.position = "absolute";
+        cartCount.style.top = "10px";
+        cartCount.style.right = "15px";
+        cartCount.style.fontSize = "12px";
+        cartCount.style.backgroundColor = "red";
+        cartCount.style.borderRadius = "50%";
+        cartCount.style.height = "20px";
+        cartCount.style.width = "20px";
+        cartCount.style.display = "flex";
+        cartCount.style.justifyContent = "center";
+        cartCount.style.alignItems = "center";
+        cartCount.style.color = "white";
+    }
+}
+
+
 let total = 0;
-let itemCount = 0;
 
-let orderedItems = {};
-
-orderButton.addEventListener('click', () => {
-  orderFrame.classList.toggle('active');
-});
-
-closeButton.addEventListener('click', () => {
-  orderFrame.classList.remove('active');
-});
-
-function toggleSizeButtons(container) {
-  const sizeButtons = container.nextElementSibling;
-  sizeButtons.style.display = 'block';
-}
-
-function addPizzaToOrder(container, size, price) {
-  const itemNameEl = container.querySelector('.itemName');
-  const spanEl = itemNameEl.querySelector('span');
-  spanEl.textContent = ` ${size}`;
-  spanEl.style.display = 'inline';
-  container.querySelector('.itemPrice').textContent = price + '$';
-  container.nextElementSibling.style.display = 'none';
-  addToOrder(container);
-
-  const name = `${itemNameEl.querySelector('p').textContent} (${spanEl.textContent})`;
-  const observer = new MutationObserver((mutations) => {
-    if (!orderedItems[name]) {
-      spanEl.style.display = 'none';
-    }
-  });
-  observer.observe(container, {
-    childList: true,
-    subtree: true,
-    attributes: true
-  });
-}
-
-//Pizza Modal
-
-////////////////////////
-
-function addToOrder(item) {
-  let name, price;
-
-  if (item.querySelector('.itemName') && item.querySelector('.itemPrice')) {
-    const itemNameEl = item.querySelector('.itemName');
-    if (itemNameEl.querySelector('p') && itemNameEl.querySelector('span')) {
-      name = `${itemNameEl.querySelector('p').textContent} (${itemNameEl.querySelector('span').textContent})`;
+function displayCartItems() {
+    cartItems.innerHTML = "";
+    total = 0;
+    cart.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
+        cartItems.appendChild(li);
+        total += item.price * item.quantity;
+    });
+    const totalElement = document.querySelector(".cart-buttons .total");
+    if (cart.length > 0) {
+        totalElement.textContent = `Total: $${total.toFixed(2)}`;
     } else {
-      name = itemNameEl.textContent;
+        totalElement.textContent = `Total: $0.00`;
     }
-    price = parseFloat(item.querySelector('.itemPrice').textContent.replace('$', ''));
-    
-    // Add flash effect
-    item.style.border = '2px solid red';
-    setTimeout(() => {
-      item.style.border = '2px solid #ffa500';
-      setTimeout(() => {
-        item.style.border = '2px solid red';
-      }, 200);
-    }, 100);
-  }
 
-  if (orderedItems[name]) {
-    orderedItems[name].quantity++;
-    orderedItems[name].totalPrice = orderedItems[name].quantity * orderedItems[name].price;
-    orderedItems[name].element = item;
-  } else {
-    orderedItems[name] = {
-      quantity: 1,
-      price: price,
-      totalPrice: price,
-      element: item
-    };
-  }
-
-  if (item.querySelector) {
-    let clickCounter = item.querySelector('.click-counter');
-    if (!clickCounter) {
-      clickCounter = document.createElement('div');
-      clickCounter.className = 'click-counter';
-      clickCounter.style.position = 'absolute';
-      clickCounter.style.top = '-5px';
-      clickCounter.style.right = '-5px';
-      clickCounter.style.backgroundColor = 'red';
-      clickCounter.style.color = 'white';
-      clickCounter.style.width = '20px';
-      clickCounter.style.height = '20px';
-      clickCounter.style.borderRadius = '50%';
-      clickCounter.style.fontSize = '12px';
-      clickCounter.style.textAlign = 'center';
-      item.style.position = 'relative';
-      item.appendChild(clickCounter);
-    }
-    clickCounter.textContent = orderedItems[name].quantity;
-  }
-
-  updateOrderItems();
-  total += price;
-  totalAmount.textContent = total.toFixed(2);
-  itemCount++;
-  orderCount.textContent = itemCount;
-  orderCount.style.display = 'inline-block';
-  emptyMessage.style.display = 'none';
+    updateDeliveryTotal();
 }
 
-function updateOrderItems() {
-  orderItems.innerHTML = '';
+function updateDeliveryTotal() {
+    const deliveryFee = 3.00;
+    const totalWithDelivery = total + deliveryFee;
 
-  for (const name in orderedItems) {
-    const item = orderedItems[name];
-    const listItem = document.createElement('li');
-    listItem.textContent = `${name} x${item.quantity} - $${item.totalPrice.toFixed(2)}`;
+    document.getElementById('deliveryTotal').innerText = `$${totalWithDelivery.toFixed(2)}`;
+}
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    removeButton.classList.add('remove-btn');
-    removeButton.addEventListener('click', function () {
-      removeItem(name, item.price);
+// Example: Call `updateDeliveryTotal()` after cart modifications
+document.querySelectorAll(".plus").forEach(button => {
+    button.addEventListener("click", function () {
+        let item = this.parentElement.parentElement;
+        let name = item.getAttribute("data-name");
+        let cartItem = cart.find(cartItem => cartItem.name === name);
+
+        if (cartItem) {
+            cartItem.quantity++;
+            item.querySelector(".qty").textContent = cartItem.quantity;
+        }
+        updateCartCount();
+        displayCartItems();
+    });
+});
+
+// Clear cart
+clearCartBtn.addEventListener("click", function () {
+    cart = [];
+    updateCartCount();
+    displayCartItems();
+    document.querySelectorAll(".quantity").forEach(q => q.classList.add("hidden"));
+    document.querySelectorAll(".add-to-order").forEach(btn => btn.classList.remove("hidden"));
+});
+
+// Generate a random order ID
+function generateOrderID() {
+    return Math.floor(Math.random() * 1000000);
+}
+
+// Send order to WhatsApp
+// call takeaway Alert
+callTakeaway.addEventListener("click", ()=> {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }else{
+    takeawayAlert.classList.add("active");
+    }
+});
+
+closeTakeaway.addEventListener("click", () =>{
+    takeawayAlert.classList.remove("active");
+});
+
+document.getElementById("order-btn").addEventListener("click", function () {
+
+    const selectedBranch = document.getElementById("selectBranch").value;
+    const phoneNumberInput = document.querySelector("#Takeaway input[type='number']");
+    const phoneNumber = phoneNumberInput.value.trim();
+
+    if (!phoneNumber || phoneNumber.length < 8) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+
+    if(selectedBranch === "Select"){
+        alert('Please select the Branch');
+        return;
+    }
+
+    let orderID = generateOrderID();
+    let orderType = "Takeaway";
+
+    let message = `*Hi Tony's Food*\n`;
+    message += `New Food Order\n`;
+    message += `Order ID: *#${orderID}*\n`;
+    message += `Branch: *${selectedBranch}*\n\n`;
+    message += `Order Details:\n`;
+    let total = 0;
+
+    cart.forEach(item => {
+        message += `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+        total += item.price * item.quantity;
     });
 
-    listItem.appendChild(removeButton);
-    orderItems.appendChild(listItem);
-  }
+    message += `\nTotal: *$${total.toFixed(2)}*\n`;
+    message += `Phone: ${phoneNumber}\n`;
+    message += `Order Type: *${orderType}*\n\n`;
+    message += `Thank you Tony's!`;
+
+    let whatsappURL = `https://wa.me/+96171096971?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+});
+
+// call delivery Alert
+orderBtnDelivery.addEventListener("click", ()=> {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }else{
+    deliveryAlert.classList.add("active");
+    }
+});
+
+closeDelivery.addEventListener("click", () =>{
+    deliveryAlert.classList.remove("active");
+});
+
+
+// map and delivery Alert
+
+let map, marker;
+
+function initMap() {
+    const defaultLocation = { lat: 34.0, lng: 35.5018 };
+
+    map = L.map('map').setView([defaultLocation.lat, defaultLocation.lng], 10);
+
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; Esri & contributors',
+    });
+
+    const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; Esri & contributors',
+    });
+
+    satellite.addTo(map);
+    labels.addTo(map);
+
+    marker = L.marker([defaultLocation.lat, defaultLocation.lng], { draggable: true })
+        .addTo(map)
+
+    map.on('click', function (event) {
+        marker.setLatLng(event.latlng);
+    });
+
+    marker.on('dragend', function (event) {
+        let position = event.target.getLatLng();
+        marker.setLatLng(position);
+    });
 }
 
-function removeItem(name, price) {
-  if (orderedItems[name]) {
-    orderedItems[name].quantity--;
-
-    if (orderedItems[name].quantity === 0) {
-      if (orderedItems[name].element) {
-        orderedItems[name].element.style.border = '';
-        const clickCounter = orderedItems[name].element.querySelector('.click-counter');
-        if (clickCounter) {
-          clickCounter.remove();
-        }
-      }
-      delete orderedItems[name];
-    } else {
-      orderedItems[name].totalPrice = orderedItems[name].quantity * orderedItems[name].price;
-      // Update click counter to show current quantity
-      if (orderedItems[name].element) {
-        const clickCounter = orderedItems[name].element.querySelector('.click-counter');
-        if (clickCounter) {
-          clickCounter.textContent = orderedItems[name].quantity;
-        }
-      }
-    }
-
-    updateOrderItems();
-    total -= parseFloat(price);
-    totalAmount.textContent = total.toFixed(2);
-    itemCount--;
-    orderCount.textContent = itemCount;
-
-    if (itemCount === 0) {
-      emptyMessage.style.display = 'block';
-      orderCount.style.display = 'none';
-    }
-  }
+function getMarkerPosition() {
+  const latLng = marker.getLatLng();
+  return {
+    lat: latLng.lat,
+    lng: latLng.lng,
+  };
 }
 
-document.querySelectorAll('.section-container').forEach(container => {
-  container.addEventListener('click', function () {
-    const name = this.querySelector('.item-name').textContent;
-    const price = this.querySelector('.item-price').textContent.replace('$', '');
-    addToOrder(name, price);
-  });
-});
-
-const orderButtonInsideFrame = document.getElementById('orderButtonInsideFrame');
-const orderDialog = document.getElementById('orderDialog');
-const closeDialogButton = document.getElementById('closeDialogButton');
-const takeawayButton = document.getElementById('takeawayButton');
-const deliveryButton = document.getElementById('deliveryButton');
-
-const takeawayfield = document.getElementById('takeAwayField');
-const closeTakeAwayField = document.getElementById("closeTakeAwayField");
-const takeawaySubmitButton = document.getElementById('takeawaySubmitButton');
-
-const branchDialog = document.getElementById('branchDialog');
-const doumaButton = document.getElementById('doumaButton');
-const batrounButton = document.getElementById('batrounButton');
-const closeBranchDialog = document.getElementById('closeBranchDialog');
-const takeawayPhoneNumber = document.getElementById('phoneNumber');
-const takeawayErrorMessage = document.getElementById("takeawayErrorMessage");
-
-orderButtonInsideFrame.addEventListener('click', () => {
-  orderDialog.classList.add('active');
-});
-
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.classList.remove('active');
-});
-
-takeawayButton.addEventListener('click', () => {
-  takeawayfield.classList.add('active');
-});
-
-closeTakeAwayField.addEventListener('click', () => {
-  takeawayfield.classList.remove('active');
-});
-
-takeawaySubmitButton.addEventListener('click', () => {
-  takeawayErrorMessage.textContent = "";
-  const phoneNumber = takeawayPhoneNumber.value.trim();
-  if (!phoneNumber) {
-    takeawayErrorMessage.innerHTML = "<i class='bx bx-message-alt'></i> Please enter your phone number.";
+document.getElementById('delivery-order-btn').addEventListener('click', function () {
+  const name = document.getElementById('name').value.trim();
+  const phoneNumber = document.querySelector('#Delivery input[type="number"]').value.trim();
+  const selectedBranch = document.getElementById('selectBranchDelivery').value;
+  const position = getMarkerPosition();
+  if (!name || !phoneNumber || phoneNumber.length < 8) {
+    alert('Please enter a valid name and phone number.');
+    return;
+  }
+  if (selectedBranch === 'Select') {
+    alert('Please select a branch.');
     return;
   }
 
-  branchDialog.classList.add('active');
-  takeawayfield.classList.remove('active'); 
-
-  function formatOrderedItems() {
-    let itemsList = "";
-    for (const name in orderedItems) {
-      const item = orderedItems[name];
-      itemsList += `${name} x${item.quantity} - $${item.totalPrice.toFixed(2)}\n`;
-    }
-    return itemsList.trim();
-  }
-
-  // Generate random order ID
-  const generateOrderId = () => {
-    return Math.floor(100000 + Math.random() * 900000);
-  };
-
-  const orderId = generateOrderId();
-
-  // Handle branch selection
-  const handleBranchSelection = (branch, phoneNum) => {
-    const formattedItems = formatOrderedItems();
-    
-    const message = `
-*Hi Captain's Pizza*
-New Wooden Food Order
-Order ID: #${orderId}
-Branch: *${branch}*
-
-${formattedItems}
-
-Total: *$${total.toFixed(2)}*
-Phone: ${phoneNumber}
-Order Type: *Takeaway*
-
-Thank you Captain's!
-`;
-
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/${phoneNum}?text=${encodedMessage}`;
-    window.open(whatsappLink, '_blank');
-    branchDialog.classList.remove('active');
-  };
-
-  doumaButton.onclick = () => handleBranchSelection('Douma', '70467263');
-  batrounButton.onclick = () => handleBranchSelection('Batroun', '71096971');
-  closeBranchDialog.onclick = () => branchDialog.classList.remove('active');
+  let orderID = generateOrderID();
+  let orderType = 'Delivery';
+  let message = `Location: https://www.google.com/maps?q=${position.lat},${position.lng}\n\n`;
+  message += `*Hi Tony's Food*\n`;
+  message += `New Food Order\n`;
+  message += `Order ID: *#${orderID}*\n`;
+  message += `Branch: *${selectedBranch}*\n`;
+  message += `Customer Name: *${name}*\n`;
+  message += `Phone: *${phoneNumber}*\n\n`;
+  message += `Order Details:\n`;
+  let total = 0;
+  cart.forEach(item => {
+    message += `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+    total += item.price * item.quantity;
+  });
+  message += `\nTotal: *$${total.toFixed(2)}*\n`;
+  message += `Order Type: *${orderType}*\n\n`;
+  message += `*Final Total: $${(total+3).toFixed(2)}*\n\n`
+  message += `Thank you Tony's!`;
+  let whatsappURL = `https://wa.me/+96171096971?text=${encodeURIComponent(message.trim())}`;
+  window.open(whatsappURL, '_blank');
 });
 
-document.getElementById('deliveryButton').addEventListener('click', () => {
-  localStorage.setItem('orderedItems', JSON.stringify(orderedItems));
-  window.location.href = 'delivery.html';
-});
 
-closeButton.addEventListener('click', () => {
-  orderFrame.classList.remove('active');
-});
+window.onload = initMap;

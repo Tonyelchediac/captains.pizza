@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oleo+Script:wght@400;700&family=Press+Start+2P&family=Rubik+Mono+One&display=swap');
+@font-face {
+    font-family: 'Carnivalee Freakshow';
+    src: url('fonts/Carnevalee Freakshow.ttf') format('truetype'); /* Path to the font file */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --background-color: #000;
+    --background-color-2: #fff;
+    --text-color: #d94505;
+    --text-color-2: #ffa500;
+    --text-color-3: gray;
+  }
+
+body {
+    background-color: black !important;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+    color: var(--text-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+}
+
+header button {
+    background: none;
+    border: none;
+    color: var(--text-color-2);
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+#cart-count{
+    color: var(--text-color-2);
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 15px;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+/* home */
+#home{
+    background: url("images/set pizza bl feren.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90% 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    width: 100%;
+    height: 70vh;
+}
+
+#home::before{
+    content: " ";
+    background-color: rgb(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 70px;
+    width: 100%;
+    height: 70vh;
+}
+
+.home-container{
+    z-index: 0;
+}
+
+.home-title{
+    font-size: 100px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+}
+
+.home-des{
+    font-size: 50px;
+    text-align: center;
+    color: orange;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+}
+
+.social-media-icon{
+    color: var(--text-color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+
+.social-media-icon a {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 0px 5px;
+  }
+
+.social-media a i{
+    color: var(--text-color-2);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.social-media p{
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+}
+
+
+/* menu title */
+.menu-title{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-title p{
+    scroll-margin-top: 150px;
+    font-size: 60px;
+    font-weight: bold;
+    color: orange;
+    letter-spacing: 2px;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+    border-bottom: 2px solid orange;
+}
+
+/* navbar for menu */
+#menuButtons {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 65px;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 10px 10px;
+}
+
+.menu-buttons button {
+    background-color: gray;
+    color: orange;
+    width: 130px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: "Oleo Script", serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Menu Styles */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+.item {
+    background: white !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 70%;
+    height: auto;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.item .itemnameanddes {
+    flex: 1;
+    text-align: left;
+}
+
+.item h2 {
+    font-family: "Oleo Script", serif;
+    margin: 0 0 5px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.item .description {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color-3);
+    margin: 0;
+}
+
+.item .priceandorder {
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* items p for price */
+.item p {
+    font-family: "Oleo Script", serif;
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: orange;
+    font-weight: bold;
+}
+
+.item button {
+    background-color: #ddd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    background-color: gray;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.quantity button:hover {
+    background-color: #ccc;
+}
+
+.quantity span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* footer */
+
+footer {
+    margin-top: 30px;
+    background-color: black;
+    border-top: 2px solid var(--text-color);
+    color: var(--text-color-2);
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+footer p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10px;
+}
+/* cart container */
+.cart-container {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    background: var(--text-color-3);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    border-left: 4px solid var(--text-color-2);
+    z-index: 6;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-container.active {
+    right: 0;
+}
+
+.cart-container h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: var(--text-color-2);
+    border-bottom: 2px solid var(--text-color-2);
+    padding-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    height: 40vh;
+    overflow-y: auto;
+    border: 1px solid var(--text-color-2);
+    border-radius: 8px;
+    padding: 10px;
+    background: rgb(163, 163, 163);
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-family: "Oleo Script", serif;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+#cart-items .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: right;
+    margin-top: 10px;
+}
+
+.cart-buttons {
+    padding-top: 15px;
+}
+
+.cart-buttons button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+}
+
+.cart-buttons button:hover {
+    transform: scale(1.02);
+}
+
+#clear-cart {
+    background-color: red;
+    color: white;
+}
+
+#callTakeawayOrder {
+    background-color: #4caf50;
+    color: white;
+}
+
+#order-btn-delivery {
+    background-color: var(--text-color-2);
+    color: white;
+}
+
+#close-cart {
+    background-color: black;
+    color: white;
+}
+
+/* takeaway alert */
+#Takeaway {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+}
+
+#Takeaway.active{
+    display: flex;
+}
+
+.takeaway-container {
+    background: gray;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.takeaway-container h2{
+    color: orange;
+    margin-bottom: 20px;
+    font-family: "Oleo Script", serif;
+    text-align: center;
+}
+
+#Takeaway p {
+    color: orange;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Oleo Script", serif;
+}
+
+#Takeaway input,
+#Takeaway select {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.closeTakeaway {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+}
+
+#order-btn{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    background-color: #4caf50;
+    color: black;
+}
+
+/* Delivery Alert */
+#Delivery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+}
+
+#Delivery.active {
+    display: flex;
+}
+
+.delivery-container {
+    background: gray;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.delivery-container h2 {
+    color: orange;
+    margin-bottom: 5px;
+    font-family: "Oleo Script", serif;
+    text-align: center;
+}
+
+.allTotal-for-dv{
+    color: orange;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1px;
+    font-family: "Oleo Script", serif;
+}
+
+#Delivery h1 {
+    color: orange;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    font-family: "Oleo Script", serif;
+}
+
+#Delivery input,
+#Delivery select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#map {
+    height:300px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.closeDelivery {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+}
+
+#delivery-order-btn{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    background-color: #4caf50;
+    color: black;
+}
+
+
+
+
+@media (max-width:768px){
+
+    #home{
+        height: 50vh;
+    }
+    #home::before{
+        height: 50vh;
+    }
+
+    .home-title{
+        font-size: 50px;
+    }
+
+    .home-des{
+        font-size: 30px;
+    }
+
+    .social-media p{
+        font-size: 12px;
+    }
+
+    .menu-title{
+        width: 100%;
+        height: 8vh;
+    }
+    
+    .menu-title p{
+        font-size: 30px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    .item {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 20px 10px 10px;
+    }
+
+    .item img{
+        width: 60px;
+        height: 60px;
+    }
+
+    .item .priceandorder{
+        align-items: end;
+        width: 100px;
+
+    }
+
+    .item .priceandorder p{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    
+    .item button {
+        font-size: 20px;
+        font-weight: bold;
+        height: 30px;
+        width: 30px;
+    }
+
+    .quantity button {
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .quantity span{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+   .item .description{
+        font-size: 12px;
+    }
+
+    #Delivery{
+        display: none;
+        justify-content: center;
+        align-items: normal;
+    }
+
+    #Delivery.active{
+        display: flex;
+    }
+}
+
+
+/* preloader */
+
+#preloader {
+    background-color: black;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  
+  #preloader .dot1,
+  #preloader .dot2,
+  #preloader .dot3 {
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  #preloader .dot1 {
+    animation: dot1 1s ease-in-out infinite;
+  }
+  
+  #preloader .dot2 {
+    animation: dot2 1s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+  
+  #preloader .dot3 {
+    animation: dot3 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes dot1 {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes dot2 {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes dot3 {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  #preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #preloader {
+      height: 100vh;
+    }
+  
+    #preloader img {
+      height: 3%;
+    }
+  }
+  
