@@ -17,6 +17,7 @@
     --background-color: #000;
     --background-color-2: #fff;
     --text-color: #d94505;
+    --text-color-1:#bababa;
     --text-color-2: #ffa500;
     --text-color-3: gray;
   }
@@ -116,7 +117,7 @@ header button {
     color: orange;
     font-weight: bold;
     letter-spacing: 2px;
-    font-family: 'Carnivalee Freakshow', sans-serif;
+    font-family: "Oleo Script", serif;
 }
 
 .social-media-icon{
@@ -220,11 +221,11 @@ header button {
     gap: 20px;
 }
 .item {
-    background: white !important;
+    background: var(--text-color-3) !important;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    padding: 10px 20px;
+    padding: 10px 80px;
     width: 100%;
     max-width: 70%;
     height: auto;
@@ -250,6 +251,7 @@ header button {
 
 .item h2 {
     font-family: "Oleo Script", serif;
+    color: var(--text-color-2);
     margin: 0 0 5px;
     font-size: 20px;
     line-height: 1.2;
@@ -257,17 +259,17 @@ header button {
 
 .item .description {
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-color-3);
+    font-family: "Oleo Script", serif;
+    color: var(--text-color-1);
     margin: 0;
 }
 
 .item .priceandorder {
-    width: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50px;
 }
 
 /* items p for price */
@@ -275,12 +277,12 @@ header button {
     font-family: "Oleo Script", serif;
     margin: 0 0 10px;
     font-size: 18px;
-    color: orange;
+    color: var(--text-color-2);
     font-weight: bold;
 }
 
 .item button {
-    background-color: #ddd;
+    background-color: var(--text-color-1);
     color: white;
     border: none;
     border-radius: 5px;
@@ -302,7 +304,7 @@ header button {
 }
 
 .quantity button {
-    background-color: gray;
+    background-color: var(--text-color-1);
     border: none;
     height: 30px;
     width: 30px;
@@ -312,13 +314,10 @@ header button {
     transition: background-color 0.3s;
 }
 
-.quantity button:hover {
-    background-color: #ccc;
-}
-
 .quantity span {
     font-size: 20px;
     font-weight: bold;
+    color: var(--background-color-2);
 }
 
 .hidden {
@@ -681,7 +680,7 @@ footer p{
     .item {
         width: 100%;
         max-width: 100%;
-        padding: 10px 20px 10px 10px;
+        padding: 10px 20px 10px 20px;
     }
 
     .item img{
