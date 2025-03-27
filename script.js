@@ -27,120 +27,138 @@ closeCartBtn.addEventListener("click", function () {
     cartContainerButtons.classList.remove("active");
 });
 
-// Handle adding items
-document.querySelectorAll(".item").forEach(item => {
-    item.addEventListener("click", function (event) {
-        const target = event.target;
+document.addEventListener("DOMContentLoaded", function () {
+    const menuSections = {
+        appetizers: "data/appetizers.json",
+        salads: "data/salads.json",
+        pizzas: "data/pizzas.json",
+        burgers: "data/burgers.json",
+        drinks: "data/drinks.json",
+        addextra: "data/addextra.json"
+    };
 
-        // Handle "Add to Order" button
-        if (target.classList.contains("add-to-order")) {
+    function loadMenuItems(sectionId, file) {
+        fetch(file)
+            .then(response => response.json())
+            .then(data => {
+                const section = document.querySelector(`#${sectionId} .menu-container`);
+                if (!section) return;
+
+                data.forEach(item => {
+                    const menuItem = document.createElement("div");
+                    menuItem.classList.add("item");
+                    menuItem.setAttribute("data-name", item.name);
+                    menuItem.setAttribute("data-price", item.price);
+
+                    menuItem.innerHTML = `
+                        <div class="itemnameanddes">
+                            <h2 class="item-name">${item.name}</h2>
+                            <p class="description">${item.description}</p>
+                        </div>
+                        <div class="priceandorder">
+                            <p class="item-price">$${item.price}</p>
+                            <button class="add-to-order">+</button>
+                            <div class="quantity hidden">
+                                <button class="minus">-</button>
+                                <span class="qty">1</span>
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                    `;
+
+                    section.appendChild(menuItem);
+                });
+                attachItemEventListeners();
+            })
+            .catch(error => console.error(`Error loading ${file}:`, error));
+    }
+
+    for (const sectionId in menuSections) {
+        loadMenuItems(sectionId, menuSections[sectionId]);
+    }
+});
+
+function attachItemEventListeners() {
+    document.querySelectorAll(".item").forEach(item => {
+        const addToOrderBtn = item.querySelector(".add-to-order");
+        const plusBtn = item.querySelector(".plus");
+        const minusBtn = item.querySelector(".minus");
+        const quantityDiv = item.querySelector(".quantity");
+        const quantityDisplay = item.querySelector(".qty");
+
+        // Remove existing event listeners before adding new ones
+        addToOrderBtn.replaceWith(addToOrderBtn.cloneNode(true));
+        plusBtn.replaceWith(plusBtn.cloneNode(true));
+        minusBtn.replaceWith(minusBtn.cloneNode(true));
+
+        // Re-select the new buttons
+        const newAddToOrderBtn = item.querySelector(".add-to-order");
+        const newPlusBtn = item.querySelector(".plus");
+        const newMinusBtn = item.querySelector(".minus");
+
+        // Add item to cart
+        newAddToOrderBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
             const name = item.getAttribute("data-name");
             const price = parseFloat(item.getAttribute("data-price"));
 
-            // Show the quantity controls and hide the "Add to Order" button
-            const quantityDiv = item.querySelector(".quantity");
             quantityDiv.classList.remove("hidden");
-            target.classList.add("hidden");
+            newAddToOrderBtn.classList.add("hidden");
 
-            // Update the cart
             let cartItem = cart.find(cartItem => cartItem.name === name);
             if (!cartItem) {
                 cart.push({ name, price, quantity: 1 });
             } else {
-                cartItem.quantity++;
+                cartItem.quantity = 1; // Ensure it starts at 1
             }
 
-            // Update the cart count and display items
+            quantityDisplay.textContent = "1";
             updateCartCount();
             displayCartItems();
-        }
+        });
 
-        // Handle "+" button
-        if (target.classList.contains("plus")) {
+        // Increase quantity by 1
+        newPlusBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
             const name = item.getAttribute("data-name");
             let cartItem = cart.find(cartItem => cartItem.name === name);
             if (cartItem) {
                 cartItem.quantity++;
-                item.querySelector(".qty").textContent = cartItem.quantity;
+                quantityDisplay.textContent = cartItem.quantity;
             }
             updateCartCount();
             displayCartItems();
-        }
+        });
 
-        // Handle "-" button
-        if (target.classList.contains("minus")) {
+        // Decrease quantity by 1
+        newMinusBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
             const name = item.getAttribute("data-name");
             let cartItem = cart.find(cartItem => cartItem.name === name);
             if (cartItem) {
                 if (cartItem.quantity > 1) {
                     cartItem.quantity--;
-                    item.querySelector(".qty").textContent = cartItem.quantity;
+                    quantityDisplay.textContent = cartItem.quantity;
                 } else {
                     cart = cart.filter(cartItem => cartItem.name !== name);
-                    item.querySelector(".quantity").classList.add("hidden");
-                    item.querySelector(".add-to-order").classList.remove("hidden");
+                    quantityDiv.classList.add("hidden");
+                    newAddToOrderBtn.classList.remove("hidden");
                 }
             }
             updateCartCount();
             displayCartItems();
-        }
+        });
     });
-});
+}
 
-// Handle + and - buttons
-document.querySelectorAll(".plus").forEach(button => {
-    button.addEventListener("click", function () {
-        let item = this.parentElement.parentElement;
-        let name = item.getAttribute("data-name");
-        let cartItem = cart.find(cartItem => cartItem.name === name);
 
-        if (cartItem) {
-            cartItem.quantity++;
-            item.querySelector(".qty").textContent = cartItem.quantity;
-        }
-        updateCartCount();
-        displayCartItems();
-    });
-});
-
-document.querySelectorAll(".minus").forEach(button => {
-    button.addEventListener("click", function () {
-        let item = this.parentElement.parentElement;
-        let name = item.getAttribute("data-name");
-        let cartItem = cart.find(cartItem => cartItem.name === name);
-        if (cartItem) {
-            if (cartItem.quantity > 1) {
-                cartItem.quantity--;
-                item.querySelector(".qty").textContent = cartItem.quantity;
-            } else {
-                cart = cart.filter(cartItem => cartItem.name !== name);
-                item.querySelector(".quantity").classList.add("hidden");
-                item.querySelector(".add-to-order").classList.remove("hidden");
-            }
-        }
-        updateCartCount();
-        displayCartItems();
-    });
-});
 
 // Update cart count
 function updateCartCount() {
     let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
-    if(totalItems == 0){
-        cartCount.style.fontWeight = "bold";
-        cartCount.style.position = "absolute";
-        cartCount.style.top = "10px";
-        cartCount.style.right = "15px";
-        cartCount.style.fontSize = "12px";
-        cartCount.style.height = "20px";
-        cartCount.style.width = "20px";
-        cartCount.style.display = "flex";
-        cartCount.style.justifyContent = "center";
-        cartCount.style.alignItems = "center";
-        cartCount.style.color = "#ffa500";
-        cartCount.style.backgroundColor = "transparent";
-    } else {
+    cartCount.style.display = totalItems === 0 ? "none" : "flex";
+    if (totalItems > 0) {
         cartCount.style.fontWeight = "bold";
         cartCount.style.position = "absolute";
         cartCount.style.top = "10px";
@@ -150,19 +168,15 @@ function updateCartCount() {
         cartCount.style.borderRadius = "50%";
         cartCount.style.height = "20px";
         cartCount.style.width = "20px";
-        cartCount.style.display = "flex";
         cartCount.style.justifyContent = "center";
         cartCount.style.alignItems = "center";
         cartCount.style.color = "white";
     }
 }
 
-
-let total = 0;
-
 function displayCartItems() {
     cartItems.innerHTML = "";
-    total = 0;
+    let total = 0; 
     cart.forEach(item => {
         let li = document.createElement("li");
         li.textContent = `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
@@ -170,37 +184,17 @@ function displayCartItems() {
         total += item.price * item.quantity;
     });
     const totalElement = document.querySelector(".cart-buttons .total");
-    if (cart.length > 0) {
-        totalElement.textContent = `Total: $${total.toFixed(2)}`;
-    } else {
-        totalElement.textContent = `Total: $0.00`;
-    }
+    totalElement.textContent = cart.length > 0 ? `Total: $${total.toFixed(2)}` : `Total: $0.00`;
 
-    updateDeliveryTotal();
+    updateDeliveryTotal(total); 
 }
 
-function updateDeliveryTotal() {
+function updateDeliveryTotal(total) { 
     const deliveryFee = 3.00;
     const totalWithDelivery = total + deliveryFee;
 
     document.getElementById('deliveryTotal').innerText = `$${totalWithDelivery.toFixed(2)}`;
 }
-
-// Example: Call `updateDeliveryTotal()` after cart modifications
-document.querySelectorAll(".plus").forEach(button => {
-    button.addEventListener("click", function () {
-        let item = this.parentElement.parentElement;
-        let name = item.getAttribute("data-name");
-        let cartItem = cart.find(cartItem => cartItem.name === name);
-
-        if (cartItem) {
-            cartItem.quantity++;
-            item.querySelector(".qty").textContent = cartItem.quantity;
-        }
-        updateCartCount();
-        displayCartItems();
-    });
-});
 
 // Clear cart
 clearCartBtn.addEventListener("click", function () {
@@ -217,22 +211,20 @@ function generateOrderID() {
 }
 
 // Send order to WhatsApp
-// call takeaway Alert
-callTakeaway.addEventListener("click", ()=> {
+callTakeaway.addEventListener("click", () => {
     if (cart.length === 0) {
         alert("Your cart is empty!");
         return;
-    }else{
-    takeawayAlert.classList.add("active");
+    } else {
+        takeawayAlert.classList.add("active");
     }
 });
 
-closeTakeaway.addEventListener("click", () =>{
+closeTakeaway.addEventListener("click", () => {
     takeawayAlert.classList.remove("active");
 });
 
 document.getElementById("order-btn").addEventListener("click", function () {
-
     const selectedBranch = document.getElementById("selectBranch").value;
     const phoneNumberInput = document.querySelector("#Takeaway input[type='number']");
     const phoneNumber = phoneNumberInput.value.trim();
@@ -242,7 +234,7 @@ document.getElementById("order-btn").addEventListener("click", function () {
         return;
     }
 
-    if(selectedBranch === "Select"){
+    if (selectedBranch === "Select") {
         alert('Please select the Branch');
         return;
     }
@@ -250,8 +242,8 @@ document.getElementById("order-btn").addEventListener("click", function () {
     let orderID = generateOrderID();
     let orderType = "Takeaway";
 
-    let message = `*Hi Tony's Food*\n`;
-    message += `New Food Order\n`;
+    let message = `*Hi Captain's Pizza*\n`;
+    message += `New Wooden Food Order\n`;
     message += `Order ID: *#${orderID}*\n`;
     message += `Branch: *${selectedBranch}*\n\n`;
     message += `Order Details:\n`;
@@ -265,7 +257,7 @@ document.getElementById("order-btn").addEventListener("click", function () {
     message += `\nTotal: *$${total.toFixed(2)}*\n`;
     message += `Phone: ${phoneNumber}\n`;
     message += `Order Type: *${orderType}*\n\n`;
-    message += `Thank you Tony's!`;
+    message += `Thank you Captain's!`;
 
     let whatsappURL = `https://wa.me/+96171096971?text=${encodeURIComponent(message)}`;
 
@@ -273,19 +265,18 @@ document.getElementById("order-btn").addEventListener("click", function () {
 });
 
 // call delivery Alert
-orderBtnDelivery.addEventListener("click", ()=> {
+orderBtnDelivery.addEventListener("click", () => {
     if (cart.length === 0) {
         alert("Your cart is empty!");
         return;
-    }else{
-    deliveryAlert.classList.add("active");
+    } else {
+        deliveryAlert.classList.add("active");
     }
 });
 
-closeDelivery.addEventListener("click", () =>{
+closeDelivery.addEventListener("click", () => {
     deliveryAlert.classList.remove("active");
 });
-
 
 // map and delivery Alert
 
@@ -321,49 +312,71 @@ function initMap() {
 }
 
 function getMarkerPosition() {
-  const latLng = marker.getLatLng();
-  return {
-    lat: latLng.lat,
-    lng: latLng.lng,
-  };
+    const latLng = marker.getLatLng();
+    return {
+        lat: latLng.lat,
+        lng: latLng.lng,
+    };
 }
 
 document.getElementById('delivery-order-btn').addEventListener('click', function () {
-  const name = document.getElementById('name').value.trim();
-  const phoneNumber = document.querySelector('#Delivery input[type="number"]').value.trim();
-  const selectedBranch = document.getElementById('selectBranchDelivery').value;
-  const position = getMarkerPosition();
-  if (!name || !phoneNumber || phoneNumber.length < 8) {
-    alert('Please enter a valid name and phone number.');
-    return;
-  }
-  if (selectedBranch === 'Select') {
-    alert('Please select a branch.');
-    return;
-  }
+    const name = document.getElementById('name').value.trim();
+    const phoneNumber = document.querySelector('#Delivery input[type="number"]').value.trim();
+    const selectedBranch = document.getElementById('selectBranchDelivery').value;
+    const position = getMarkerPosition();
+    if (!name || !phoneNumber || phoneNumber.length < 8) {
+        alert('Please enter a valid name and phone number.');
+        return;
+    }
+    if (selectedBranch === 'Select') {
+        alert('Please select a branch.');
+        return;
+    }
 
-  let orderID = generateOrderID();
-  let orderType = 'Delivery';
-  let message = `Location: https://www.google.com/maps?q=${position.lat},${position.lng}\n\n`;
-  message += `*Hi Tony's Food*\n`;
-  message += `New Food Order\n`;
-  message += `Order ID: *#${orderID}*\n`;
-  message += `Branch: *${selectedBranch}*\n`;
-  message += `Customer Name: *${name}*\n`;
-  message += `Phone: *${phoneNumber}*\n\n`;
-  message += `Order Details:\n`;
-  let total = 0;
-  cart.forEach(item => {
-    message += `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
-    total += item.price * item.quantity;
-  });
-  message += `\nTotal: *$${total.toFixed(2)}*\n`;
-  message += `Order Type: *${orderType}*\n\n`;
-  message += `*Final Total: $${(total+3).toFixed(2)}*\n\n`
-  message += `Thank you Tony's!`;
-  let whatsappURL = `https://wa.me/+96171096971?text=${encodeURIComponent(message.trim())}`;
-  window.open(whatsappURL, '_blank');
+    let orderID = generateOrderID();
+    let orderType = 'Delivery';
+    let message = `Location: https://www.google.com/maps?q=${position.lat},${position.lng}\n\n`;
+    message += `*Hi Captain's Pizza*\n`;
+    message += `New Food Order\n\n`;
+    message += `Order ID: *#${orderID}*\n`;
+    message += `Branch: *${selectedBranch}*\n`;
+    message += `Customer Name: *${name}*\n`;
+    message += `Phone: *${phoneNumber}*\n\n`;
+    message += `Order Details:\n`;
+    let total = 0;
+    cart.forEach(item => {
+        message += `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+        total += item.price * item.quantity;
+    });
+    message += `\nTotal: *$${total.toFixed(2)}*\n`;
+    message += `Order Type: *${orderType}*\n\n`;
+    message += `*Final Total: $${(total + 3).toFixed(2)}*\n\n`
+    message += `Thank you Captain's!`;
+    let whatsappURL = `https://wa.me/+96171096971?text=${encodeURIComponent(message.trim())}`;
+    window.open(whatsappURL, '_blank');
 });
 
-
 window.onload = initMap;
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.item').forEach(item => {
+        const name = item.getAttribute('data-name');
+        const price = item.getAttribute('data-price');
+        item.querySelector('.item-name').textContent = `${name}`;
+        item.querySelector('.item-price').textContent = `$${price}`;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const customAlert = document.querySelector(".contact-info-custom-alert");
+    const openAlert = document.getElementById("contact-info");
+    const closeAlert = document.querySelector(".close-button");
+
+    openAlert.addEventListener("click", (event) => {
+        customAlert.classList.add("active");
+    });
+
+    closeAlert.addEventListener("click", () => {
+        customAlert.classList.remove("active");
+    });
+});

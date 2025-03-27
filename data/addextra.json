@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Mushroom",
+        "price": "0.75",
+        "description": ""
+    },
+    {
+        "name": "Cheese",
+        "price": "0.75",
+        "description": ""
+    },
+    {
+        "name": "Pepperoni",
+        "price": "1.00",
+        "description": ""
+    },
+    {
+        "name": "Ham",
+        "price": "1.00",
+        "description": ""
+    },
+    {
+        "name": "Any Sauce",
+        "price": "2.00",
+        "description": ""
+    }
+]

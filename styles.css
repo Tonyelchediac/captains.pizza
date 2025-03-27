@@ -20,6 +20,7 @@
     --text-color-1:#bababa;
     --text-color-2: #ffa500;
     --text-color-3: gray;
+    --item-button-1: #919191;
   }
 
 body {
@@ -52,7 +53,7 @@ header h1 {
 header button {
     background: none;
     border: none;
-    color: var(--text-color-2);
+    color: var(--text-color);
     font-size: 20px;
     cursor: pointer;
     margin-right: 10px;
@@ -60,7 +61,7 @@ header button {
 }
 
 #cart-count{
-    color: var(--text-color-2);
+    color: var(--text-color);
     font-weight: bold;
     position: absolute;
     display: flex;
@@ -159,6 +160,53 @@ header button {
     font-family: 'Carnivalee Freakshow', sans-serif;
 }
 
+.contact-info-custom-alert {
+    background-color: var(--background-color);
+    width: 300px;
+    height: 250px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 15px;
+}
+
+.contact-info-custom-alert.active{
+    display: flex;
+}
+
+.contact-info-custom-alert p {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-info-custom-alert .contact-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+  
+.contact-info-custom-alert .contact-phone a {
+    color: var(--text-color-2);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+  
+.contact-info-custom-alert i {
+    margin-right: 5px;
+}
 
 /* menu title */
 .menu-title{
@@ -213,13 +261,19 @@ header button {
 }
 
 /* Menu Styles */
-.menu {
+
+.items-section {
+    scroll-margin-top: 140px;
+}
+
+.menu-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
     gap: 20px;
 }
+
 .item {
     background: var(--text-color-3) !important;
     border-radius: 10px;
@@ -282,7 +336,7 @@ header button {
 }
 
 .item button {
-    background-color: var(--text-color-1);
+    background-color: var(--item-button-1);
     color: white;
     border: none;
     border-radius: 5px;
@@ -295,7 +349,6 @@ header button {
     margin-bottom: 5px;
 }
 
-
 .quantity {
     display: flex;
     justify-content: center;
@@ -304,7 +357,7 @@ header button {
 }
 
 .quantity button {
-    background-color: var(--text-color-1);
+    background-color: #ffa500;
     border: none;
     height: 30px;
     width: 30px;
@@ -342,10 +395,12 @@ footer {
     font-size: 15px;
     font-weight: bold;
 }
+
 footer p{
     font-family: Arial, Helvetica, sans-serif;
     margin-right: 10px;
 }
+
 /* cart container */
 .cart-container {
     position: fixed;

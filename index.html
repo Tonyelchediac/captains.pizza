@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   </head>
   <body>
+
     <!-- Pre Loader -->
     <div id="preloader">
       <div class="dot1"><i class="fa-solid fa-burger"></i></div>
@@ -21,7 +22,7 @@
     <header>
       <h1>captain's pizza</h1>
       <button id="cart-btn">
-        <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+        <i class="fas fa-shopping-cart"></i> <span id="cart-count"></span>
       </button>
     </header>
 
@@ -32,26 +33,33 @@
         <p class="home-des">wood oven</p>
         <div class="social-media-icon">
           <div class="social-media">
-            <a href="">
+            <a href="#" id="contact-info">
                 <i class="fa-solid fa-phone"></i>
             </a>
             <p>contact</p>
           </div>
+          <div class="contact-info-custom-alert">
+            <p class="close-button">x</p>
+            <div class="contact-phone">
+              <a href="tel:+96181635636"><i class="fa-solid fa-phone"> Batroun</i></a>
+              <a href="tel:+96171883916"><i class="fa-solid fa-phone"> Douma</i></a>
+            </div>
+          </div>
           <div class="social-media">
             <a
               href="https://www.google.com/maps/d/u/0/edit?mid=1K0riTFrMiZmBJa9nIjDUgYuA73XvmbY&usp=sharing">
-              <i class="fa-solid fa-location-dot"></i>            </a>
+              <i class="fa-solid fa-location-dot"></i></a>
             <p>location</p>
           </div>
           <div class="social-media">
             <a href="https://instagram.com/captains.pizza">
-                <i class="fa-brands fa-instagram"></i>            </a>
+                <i class="fa-brands fa-instagram"></i></a>
             <p>instagram</p>
           </div>
           <div class="social-media">
             <a
               href="https://www.facebook.com/profile.php?id=100066420747274&mibextid=ZbWKwL">
-              <i class="fa-brands fa-facebook-f"></i>            </a>
+              <i class="fa-brands fa-facebook-f"></i></a>
             <p>facebook</p>
           </div>
         </div>
@@ -66,847 +74,58 @@
 
     <section id="menuButtons">
       <div class="menu-buttons">
-        <a href="#Appetizers"><button>Appetizers</button></a>
-        <a href="#Salads"><button>Salads</button></a>
-        <a href="#Pizza"><button>Pizza</button></a>
-        <a href="#Burgers"><button>Burgers</button></a>
-        <a href="#Sandwiches"><button>Sandwiches</button></a>
-        <a href="#Drinks"><button>Drinks</button></a>
+        <a href="#appetizers"><button>Appetizers</button></a>
+        <a href="#salads"><button>Salads</button></a>
+        <a href="#pizzas"><button>Pizza</button></a>
+        <a href="#burgers"><button>Burgers</button></a>
+        <a href="#drinks"><button>Drinks</button></a>
+        <a href="#addextra"><button>Add Extra</button></a>
       </div>
     </section>
 
-    <div class="menu">
-      <!-- appetizers menu -->
 
+    <section id="appetizers" class="items-section">
       <div class="menu-title">
-        <p id="Appetizers">appetizers</p>
+        <p>appetizers</p>
       </div>
-
-      <div class="item" data-name="Mozzarella Sticks" data-price="6.00">
-        <div class="itemnameanddes">
-          <h2>Mozzarella Sticks</h2>
-          <p class="description">
-            6 Crispy breaded mozzarella sticks served with marinara sauce.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Garlic Bread" data-price="5.00">
-        <div class="itemnameanddes">
-          <h2>Garlic Bread</h2>
-          <p class="description">
-            6 Toasted bread topped with garlic butter and herbs.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$5.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="French Fries" data-price="4.00">
-        <div class="itemnameanddes">
-          <h2>French Fries</h2>
-          <p class="description">Crispy golden fries served with ketchup.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$4.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Chicken Sticks" data-price="7.00">
-        <div class="itemnameanddes">
-          <h2>Chicken Sticks</h2>
-          <p class="description">
-            10 Crispy fried chicken sticks served with a choice of dipping
-            sauce.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$7.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Calamari" data-price="9.00">
-        <div class="itemnameanddes">
-          <h2>Calamari</h2>
-          <p class="description">
-            10 Crispy fried calamari rings served with tartar sauce.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$9.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Potato Wedges" data-price="5.50">
-        <div class="itemnameanddes">
-          <h2>Potato Wedges</h2>
-          <p class="description">
-            Seasoned potato wedges served with a side of sour cream.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$5.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- salad menu -->
-
+      <div class="menu-container"></div>
+    </section>
+    
+    <section id="salads" class="items-section">
       <div class="menu-title">
-        <p id="Salads">salads</p>
+        <p>salads</p>
       </div>
+      <div class="menu-container"></div>
+    </section>
 
-      <div class="item" data-name="Caesar Salad" data-price="7.00">
-        <img src="images/caesar-salad.jpg" alt="Caesar Salad" />
-        <div class="itemnameanddes">
-          <h2>Caesar Salad</h2>
-          <p class="description">
-            Crisp romaine lettuce, parmesan cheese, croutons, and Caesar
-            dressing.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$7.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Chef Salad" data-price="8.00">
-        <img src="images/chef-salad.jpg" alt="Chef Salad" />
-        <div class="itemnameanddes">
-          <h2>Chef Salad</h2>
-          <p class="description">
-            Mixed greens with turkey, ham, cheese, boiled egg, and ranch
-            dressing.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$8.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Pasta Salad" data-price="6.50">
-        <img src="images/pasta-salad.jpg" alt="Pasta Salad" />
-        <div class="itemnameanddes">
-          <h2>Pasta Salad</h2>
-          <p class="description">
-            Cold pasta tossed with fresh vegetables, feta cheese, and Italian
-            dressing.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- pizza menu -->
-
+    <section id="pizzas" class="items-section">
       <div class="menu-title">
-        <p id="Pizza">pizza</p>
+        <p>Pizza</p>
       </div>
-
-      <div class="item" data-name="Margherita Pizza" data-price="8.00">
-        <img src="images/margherita.jpg" alt="Margherita Pizza" />
-        <div class="itemnameanddes">
-          <h2>Margherita Pizza</h2>
-          <p class="description">Tomato Sauce, Mozzarella Cheese, Basil</p>
-        </div>
-        <div class="priceandorder">
-          <p>$8.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Pepperoni Pizza" data-price="10.00">
-        <img src="images/pepperoni.jpg" alt="Pepperoni Pizza" />
-        <div class="itemnameanddes">
-          <h2>Pepperoni Pizza</h2>
-          <p class="description">Tomato Sauce, Mozzarella Cheese, Pepperoni</p>
-        </div>
-        <div class="priceandorder">
-          <p>$10.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Hawaiian Pizza" data-price="11.00">
-        <img src="images/hawaiian.jpg" alt="Hawaiian Pizza" />
-        <div class="itemnameanddes">
-          <h2>Hawaiian Pizza</h2>
-          <p class="description">
-            Tomato Sauce, Mozzarella Cheese, Ham, Pineapple
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$11.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="BBQ Chicken Pizza" data-price="12.00">
-        <img src="images/chicken.jpg" alt="BBQ Chicken Pizza" />
-        <div class="itemnameanddes">
-          <h2>BBQ Chicken Pizza</h2>
-          <p class="description">
-            BBQ Sauce, Mozzarella Cheese, Grilled Chicken, Onions
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$12.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Four Cheese Pizza" data-price="13.00">
-        <img src="images/four-cheese.jpg" alt="Four Cheese Pizza" />
-        <div class="itemnameanddes">
-          <h2>Four Cheese Pizza</h2>
-          <p class="description">Mozzarella, Parmesan, Gorgonzola, Ricotta</p>
-        </div>
-        <div class="priceandorder">
-          <p>$13.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Meat Lovers Pizza" data-price="14.00">
-        <img src="images/meat-lovers.jpg" alt="Meat Lovers Pizza" />
-        <div class="itemnameanddes">
-          <h2>Meat Lovers Pizza</h2>
-          <p class="description">
-            Tomato Sauce, Mozzarella Cheese, Pepperoni, Sausage, Bacon, Ham
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$14.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Veggie Pizza" data-price="10.50">
-        <img src="images/veggie.jpg" alt="Veggie Pizza" />
-        <div class="itemnameanddes">
-          <h2>Veggie Pizza</h2>
-          <p class="description">
-            Tomato Sauce, Mozzarella Cheese, Bell Peppers, Mushrooms, Onions,
-            Olives
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$10.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Truffle Pizza" data-price="15.00">
-        <img src="images/truffle.jpg" alt="Truffle Pizza" />
-        <div class="itemnameanddes">
-          <h2>Truffle Pizza</h2>
-          <p class="description">
-            White Sauce, Mozzarella Cheese, Truffle Oil, Mushrooms
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$15.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- burger menu -->
-
+      <div class="menu-container"></div>
+    </section>
+    
+    <section id="burgers" class="items-section">
       <div class="menu-title">
-        <p id="Burgers">burgers</p>
+        <p>Burgers</p>
       </div>
-
-      <div class="item" data-name="Cheese burger" data-price="10.00">
-        <img src="images/cheese-burger.jpg" alt="Classic Cheeseburger" />
-        <div class="itemnameanddes">
-          <h2>Cheese burger</h2>
-          <p class="description">
-            Beef patty with melted cheddar, lettuce, tomato, onions, pickles,
-            and condiments.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$10.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Bacon Burger" data-price="12.00">
-        <img src="images/bacon-burger.jpg" alt="Bacon Burger" />
-        <div class="itemnameanddes">
-          <h2>Bacon Burger</h2>
-          <p class="description">
-            Classic burger topped with crispy bacon, cheese, lettuce, and
-            tomato.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$12.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Veggie Burger" data-price="9.00">
-        <img src="images/veggie-burger.jpg" alt="Veggie Burger" />
-        <div class="itemnameanddes">
-          <h2>Veggie Burger</h2>
-          <p class="description">
-            Plant-based burger made with vegetables, beans, or legumes.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$9.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Mushroom Swiss Burger" data-price="11.00">
-        <img
-          src="images/mushroom-swiss-burger.jpg"
-          alt="Mushroom Swiss Burger"
-        />
-        <div class="itemnameanddes">
-          <h2>Mush Swiss Burger</h2>
-          <p class="description">
-            Beef patty topped with sautéed mushrooms and Swiss cheese.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$11.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="BBQ Burger" data-price="12.50">
-        <img src="images/bbq-burger.jpg" alt="BBQ Burger" />
-        <div class="itemnameanddes">
-          <h2>BBQ Burger</h2>
-          <p class="description">
-            Burger topped with barbecue sauce, cheese, bacon, and onion rings.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$12.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Chicken Burger" data-price="10.50">
-        <img src="images/chicken-burger.jpg" alt="Chicken Burger" />
-        <div class="itemnameanddes">
-          <h2>Chicken Burger</h2>
-          <p class="description">
-            Grilled or fried chicken patty with lettuce, tomato, and mayo.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$10.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Fish Burger" data-price="11.50">
-        <img src="images/fish-burger.jpg" alt="Fish Burger" />
-        <div class="itemnameanddes">
-          <h2>Fish Burger</h2>
-          <p class="description">
-            Fish fillet burger, typically with cod or salmon, and traditional
-            toppings.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$11.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- sandwiches menu -->
-
+      <div class="menu-container"></div>
+    </section>
+    
+    <section id="drinks" class="items-section">
       <div class="menu-title">
-        <p id="Sandwiches">sandwiches</p>
+        <p>Drinks</p>
       </div>
-
-      <div class="item" data-name="Shawarma Chicken" data-price="6.50">
-        <img src="images/shawarma_chicken.jpg" alt="Shawarma Chicken" />
-        <div class="itemnameanddes">
-          <h2>Shawarma Chicken</h2>
-          <p class="description">
-            Marinated chicken slices, garlic sauce, pickles, and fries wrapped
-            in pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Shawarma Beef" data-price="7.00">
-        <img src="images/shawarma_beef.jpg" alt="Shawarma Beef" />
-        <div class="itemnameanddes">
-          <h2>Shawarma Beef</h2>
-          <p class="description">
-            Tender beef strips, tahini sauce, tomatoes, onions, and pickles
-            wrapped in pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$7.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Falafel Sandwich" data-price="5.00">
-        <img src="images/falafel_sandwich.jpg" alt="Falafel Sandwich" />
-        <div class="itemnameanddes">
-          <h2>Falafel Sandwich</h2>
-          <p class="description">
-            Crispy falafel patties, tahini sauce, tomatoes, pickles, and parsley
-            wrapped in pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$5.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Kafta Sandwich" data-price="6.50">
-        <img src="images/kafta_sandwich.jpg" alt="Kafta Sandwich" />
-        <div class="itemnameanddes">
-          <h2>Kafta Sandwich</h2>
-          <p class="description">
-            Grilled kafta (ground beef with spices), hummus, tomatoes, parsley,
-            and pickles wrapped in pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Soujouk Sandwich" data-price="7.00">
-        <img src="images/soujouk_sandwich.jpg" alt="Soujouk Sandwich" />
-        <div class="itemnameanddes">
-          <h2>Soujouk Sandwich</h2>
-          <p class="description">
-            Spicy Armenian sausage, tomatoes, pickles, and garlic sauce wrapped
-            in pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$7.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Fajitas Sandwich" data-price="7.50">
-        <img src="images/fajitas_sandwich.jpg" alt="Fajitas Sandwich" />
-        <div class="itemnameanddes">
-          <h2>Fajitas Sandwich</h2>
-          <p class="description">
-            Grilled chicken strips with bell peppers, onions, and melted cheese,
-            served with a special fajita sauce in pita or tortilla bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$7.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Tawook Sandwich" data-price="6.50">
-        <img src="images/tawook_sandwich.jpg" alt="Tawook Sandwich" />
-        <div class="itemnameanddes">
-          <h2>Tawook Sandwich</h2>
-          <p class="description">
-            Marinated grilled chicken skewers, garlic sauce, pickles, and fries
-            wrapped in Lebanese pita bread.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- drink menu -->
-
+      <div class="menu-container"></div>
+    </section>
+    
+    <section id="addextra" class="items-section">
       <div class="menu-title">
-        <p id="Drinks">drinks</p>
+        <p>Add Extra</p>
       </div>
-
-      <div class="item" data-name="Expresso" data-price="1.50">
-        <img src="images/expresso.jpg" alt="Pepsi" />
-        <div class="itemnameanddes">
-          <h2>Expresso</h2>
-          <p class="description">Refreshing with expresso.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$1.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="Nescafe" data-price="2.50">
-        <img src="images/nescafe.jpg" alt="Pepsi" />
-        <div class="itemnameanddes">
-          <h2>Nescafe</h2>
-          <p class="description">3in1.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="Americano" data-price="2.50">
-        <img src="images/americano.jpg" alt="Pepsi" />
-        <div class="itemnameanddes">
-          <h2>Americano</h2>
-          <p class="description">Black.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.50</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="Pepsi" data-price="2.00">
-        <img src="images/pepsi.jpg" alt="Pepsi" />
-        <div class="itemnameanddes">
-          <h2>Pepsi</h2>
-          <p class="description">Refreshing carbonated soft drink.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="Pepsi Diet" data-price="2.00">
-        <img src="images/pepsi-diet.jpg" alt="Pepsi Diet" />
-        <div class="itemnameanddes">
-          <h2>Pepsi Diet</h2>
-          <p class="description">Refreshing carbonated soft drink.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="7up" data-price="2.00">
-        <img src="images/7up.jpg" alt="7Up" />
-        <div class="itemnameanddes">
-          <h2>7up</h2>
-          <p class="description">Lemon-lime flavored soda.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="7up Diet" data-price="2.00">
-        <img src="images/7up-diet.jpg" alt="7Up" />
-        <div class="itemnameanddes">
-          <h2>7up Diet</h2>
-          <p class="description">Lemon-lime flavored soda.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Miranda" data-price="2.00">
-        <img src="images/miranda.jpg" alt="Miranda" />
-        <div class="itemnameanddes">
-          <h2>Miranda</h2>
-          <p class="description">Fruity and fizzy orange-flavored drink.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="item" data-name="Miranda Diet" data-price="2.00">
-        <img src="images/miranda-diet.jpg" alt="Miranda diet" />
-        <div class="itemnameanddes">
-          <h2>Miranda Diet</h2>
-          <p class="description">Fruity and fizzy orange-flavored drink.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$2.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Local Beer" data-price="5.00">
-        <img src="images/local-beer.jpg" alt="Local Beer" />
-        <div class="itemnameanddes">
-          <h2>Local Beer</h2>
-          <p class="description">Refreshing locally brewed beer.</p>
-        </div>
-        <div class="priceandorder">
-          <p>$5.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Imported Beer" data-price="6.00">
-        <img src="images/imported-beer.jpg" alt="Imported Beer" />
-        <div class="itemnameanddes">
-          <h2>Imported Beer</h2>
-          <p class="description">
-            Premium quality beer from top international breweries.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$6.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item" data-name="Energy Drink" data-price="4.00">
-        <img src="images/energy-drink.jpg" alt="Energy Drink" />
-        <div class="itemnameanddes">
-          <h2>Energy Drink</h2>
-          <p class="description">
-            Boost your energy with a refreshing and revitalizing drink.
-          </p>
-        </div>
-        <div class="priceandorder">
-          <p>$4.00</p>
-          <button class="add-to-order">+</button>
-          <div class="quantity hidden">
-            <button class="minus">-</button>
-            <span class="qty">1</span>
-            <button class="plus">+</button>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="menu-container"></div>
+    </section>
+    
 
     <div id="cart" class="cart-container">
       <h2>Cart</h2>
@@ -969,7 +188,7 @@
 
     <footer> <p>&copy;</p> captain's pizza || all right reserved. TX</footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
       var loader = document.getElementById("preloader");
