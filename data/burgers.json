@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Classic Burger",
+        "price": "8.50",
+        "description": "Beef, Tomato, Onion, Cheddar Cheese, Mayo, Mustard Ketchup"
+    },
+    {
+        "name": "Chicken Burger",
+        "price": "8.50",
+        "description": "Chicken breast, Pickles, Mushroom, Lettuce, Garlic Sauce"
+    },
+    {
+        "name": "Mushroom Cap Burger",
+        "price": "10.50",
+        "description": "Beef, Stuffed Mushroom, Lolorosso, Pickles, Onion, Special Sauce"
+    },
+    {
+        "name": "C.C.C. Burger",
+        "price": "9.50",
+        "description": "Crispy Chicken, Lolorosso, Pickles, Tomato, Garlic Aoli Sauce"
+    }
+]

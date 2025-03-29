@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Margherita Pizza",
+        "price-medium": "6.50",
+        "price-large": "7.50",
+        "description": "Pizza Sauce, Mozzarella Cheese, Fresh Basil"
+    },
+    {
+        "name": "Vegeterian Pizza",
+        "price-medium": "7.50",
+        "price-large": "8.00",
+        "description": "Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom, Onion, Black Olives"
+    },
+    {
+        "name": "Classic Pizza",
+        "price-medium": "7.00",
+        "price-large": "7.75",
+        "description": "Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom"
+    },
+    {
+        "name": "Artichoke Pizza",
+        "price-medium": "7.00",
+        "price-large": "8.00",
+        "description": "Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano"
+    },
+    {
+        "name": "Pepperoni Pizza",
+        "price-medium": "7.50",
+        "price-large": "8.50",
+        "description": "Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano"
+    },
+    {
+        "name": "Sweet Pepperoni Pizza",
+        "price-medium": "8.50",
+        "price-large": "9.50",
+        "description": "Pizza Sauce, Mozzarella Cheese, Pepperoni, Honey, Chili Oil"
+    },
+    {
+        "name": "Captains Pizza",
+        "price-medium": "7.50",
+        "price-large": "8.50",
+        "description": "Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry Tomato, Balsamic Sauce"
+    },
+    {
+        "name": "Village Pizza",
+        "price-medium": "7.00",
+        "price-large": "7.75",
+        "description": "Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato"
+    },
+    {
+        "name": "Eggplant Pizza",
+        "price-medium": "7.00",
+        "price-large": "7.75",
+        "description": "Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano"
+    },
+    {
+        "name": "Chicken Pizza",
+        "price-medium": "7.75",
+        "price-large": "8.75",
+        "description": "Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives, Mushroom, & Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top"
+    },
+    {
+        "name": "Four Cheese Pizza",
+        "price-medium": "7.50",
+        "price-large": "8.50",
+        "description": "Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel, Parmesan"
+    },
+    {
+        "name": "Toscana Pizza",
+        "price-medium": "7.50",
+        "price-large": "8.25",
+        "description": "Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried Tomato, Fresh Basil"
+    }
+]
