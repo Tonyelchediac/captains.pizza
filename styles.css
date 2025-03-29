@@ -406,14 +406,14 @@ footer p{
     position: fixed;
     right: -350px;
     top: 0;
-    width: 350px;
+    width: 300px;
     height: 100vh;
     background: var(--text-color-3);
     transition: right 0.3s ease-in-out;
     padding: 20px;
-    border-left: 4px solid var(--text-color-2);
+    border-left: 4px solid var(--text-color);
     z-index: 6;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0 10px 0 var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -435,7 +435,7 @@ footer p{
     list-style: none;
     padding: 0;
     margin: 0 0 10px;
-    height: 40vh;
+    height: 35vh;
     overflow-y: auto;
     border: 1px solid var(--text-color-2);
     border-radius: 8px;
@@ -493,12 +493,12 @@ footer p{
 }
 
 #callTakeawayOrder {
-    background-color: #4caf50;
+    background-color: var(--text-color-2);
     color: white;
 }
 
 #order-btn-delivery {
-    background-color: var(--text-color-2);
+    background-color: var(--text-color);
     color: white;
 }
 
@@ -587,7 +587,7 @@ footer p{
     font-size: 16px;
     transition: background-color 0.3s;
     font-weight: bold;
-    background-color: #4caf50;
+    background-color: var(--text-color-2);
     color: black;
 }
 
@@ -688,7 +688,7 @@ footer p{
     font-size: 16px;
     transition: background-color 0.3s;
     font-weight: bold;
-    background-color: #4caf50;
+    background-color: var(--text-color-2);
     color: black;
 }
 
