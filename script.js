@@ -337,7 +337,7 @@ document.getElementById('delivery-order-btn').addEventListener('click', function
     let orderType = 'Delivery';
     let message = `Location: https://www.google.com/maps?q=${position.lat},${position.lng}\n\n`;
     message += `*Hi Captain's Pizza*\n`;
-    message += `New Food Order\n\n`;
+    message += `New Wooden Food Order\n\n`;
     message += `Order ID: *#${orderID}*\n`;
     message += `Branch: *${selectedBranch}*\n`;
     message += `Customer Name: *${name}*\n`;
