@@ -413,7 +413,7 @@ footer p{
     padding: 20px;
     border-left: 4px solid var(--text-color);
     z-index: 6;
-    box-shadow: -5px 0 10px 0 var(--text-color);
+    box-shadow: -3px 0 3px 0 var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
