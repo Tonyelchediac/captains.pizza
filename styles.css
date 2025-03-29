@@ -7,7 +7,7 @@
   }
 
 *{
-    margin: 0; 
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
@@ -275,7 +275,7 @@ header button {
 }
 
 .item {
-    background: var(--text-color-3);
+    background: var(--text-color-3) !important;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -377,108 +377,6 @@ header button {
     display: none;
 }
 
-/* pizza code */
-
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-}
-
-.pizza-item {
-    background: var(--text-color-3);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 10px 80px;
-    width: 100%;
-    max-width: 70%;
-    height: auto;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.pizza-item .itemnameanddes {
-    flex: 1;
-    text-align: left;
-}
-
-.pizza-item h2 {
-    font-family: "Oleo Script", serif;
-    color: var(--text-color-2);
-    margin: 0 0 5px;
-    font-size: 20px;
-    line-height: 1.2;
-}
-
-.pizza-item .description {
-    font-size: 15px;
-    font-family: "Oleo Script", serif;
-    color: var(--text-color-1);
-    margin: 0;
-}
-
-.pizza-item .priceandorder {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.pizza-item p {
-    font-family: "Oleo Script", serif;
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: var(--text-color-2);
-    font-weight: bold;
-}
-
-.pizza-item button {
-    background-color: var(--item-button-1);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    height: 30px;
-    width: 30px;
-    transition: background-color 0.3s;
-    margin-bottom: 5px;
-}
-
-/* Quantity box */
-.pizza-item .quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.pizza-item .quantity button {
-    background-color: #ffa500;
-    border: none;
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.pizza-item .quantity span {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--background-color-2);
-}
-
-/* Hide quantity section initially */
-.pizza-item .hidden {
-    display: none;
-}
-
-
 /* footer */
 
 footer {
@@ -508,14 +406,14 @@ footer p{
     position: fixed;
     right: -350px;
     top: 0;
-    width: 300px;
+    width: 350px;
     height: 100vh;
     background: var(--text-color-3);
     transition: right 0.3s ease-in-out;
     padding: 20px;
     border-left: 4px solid var(--text-color-2);
     z-index: 6;
-    box-shadow: -5px 0px 10px 0px var(--text-color-2);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -537,7 +435,7 @@ footer p{
     list-style: none;
     padding: 0;
     margin: 0 0 10px;
-    height: 35vh;
+    height: 40vh;
     overflow-y: auto;
     border: 1px solid var(--text-color-2);
     border-radius: 8px;
@@ -595,12 +493,12 @@ footer p{
 }
 
 #callTakeawayOrder {
-    background-color: var(--text-color-2);
+    background-color: #4caf50;
     color: white;
 }
 
 #order-btn-delivery {
-    background-color: var(--text-color);
+    background-color: var(--text-color-2);
     color: white;
 }
 
@@ -689,7 +587,7 @@ footer p{
     font-size: 16px;
     transition: background-color 0.3s;
     font-weight: bold;
-    background-color: var(--text-color-2);
+    background-color: #4caf50;
     color: black;
 }
 
@@ -790,7 +688,7 @@ footer p{
     font-size: 16px;
     transition: background-color 0.3s;
     font-weight: bold;
-    background-color: var(--text-color-2);
+    background-color: #4caf50;
     color: black;
 }
 
@@ -880,25 +778,6 @@ footer p{
 
    .item .description{
         font-size: 12px;
-    }
-
-    /* pizza code */
-    .pizza-item {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px 20px 10px 20px;
-    }
-
-    .pizza-item img{
-        width: 60px;
-        height: 60px;
-    }
-
-    .pizza-item .priceandorder {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 10px;
     }
 
     #Delivery{

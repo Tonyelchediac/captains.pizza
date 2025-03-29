@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuSections = {
         appetizers: "data/appetizers.json",
         salads: "data/salads.json",
+        pizzas: "data/pizzas.json",
         burgers: "data/burgers.json",
         drinks: "data/drinks.json",
         addextra: "data/addextra.json"
@@ -74,145 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (const sectionId in menuSections) {
         loadMenuItems(sectionId, menuSections[sectionId]);
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const pizzaFile = "data/pizzas.json";
-
-    function loadPizzaItems(file) {
-        fetch(file)
-            .then(response => response.json())
-            .then(data => {
-                const section = document.querySelector("#pizzas .menu-container");
-                if (!section) return;
-
-                data.forEach(item => {
-                    const pizzaItem = document.createElement("div");
-                    pizzaItem.classList.add("pizza-item");
-                    pizzaItem.setAttribute("data-name", item.name);
-                    pizzaItem.setAttribute("data-price-medium", item["price-medium"]);
-                    pizzaItem.setAttribute("data-price-large", item["price-large"]);
-
-                    pizzaItem.innerHTML = `
-                        <div class="itemnameanddes">
-                            <h2>${item.name}</h2>
-                            <p class="description">${item.description}</p>
-                        </div>
-                        <div class="priceandorder" id="medium">
-                            <p class="item-price">Medium $${item["price-medium"]}</p>
-                            <button class="add-to-order">+</button>
-                            <div class="quantity hidden">
-                                <button class="minus">-</button>
-                                <span class="qty">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-                        <div class="priceandorder" id="large">
-                            <p class="item-price">Large $${item["price-large"]}</p>
-                            <button class="add-to-order">+</button>
-                            <div class="quantity hidden">
-                                <button class="minus">-</button>
-                                <span class="qty">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-                    `;
-
-                    section.appendChild(pizzaItem);
-                });
-
-                attachItemEventListeners();
-            })
-            .catch(error => console.error(`Error loading ${file}:`, error));
-    }
-
-    loadPizzaItems(pizzaFile);
-
-    // Add event listeners to the dynamically created items
-    function attachItemEventListeners() {
-        const addToOrderButtons = document.querySelectorAll(".add-to-order");
-
-        addToOrderButtons.forEach(button => {
-            button.addEventListener("click", function() {
-                const pizzaItem = button.closest(".pizza-item");
-                const pizzaName = pizzaItem.getAttribute("data-name");
-                const size = button.closest(".priceandorder").id; // Get size (medium or large)
-                const pizzaPrice = parseFloat(button.closest(".priceandorder").querySelector(".item-price").textContent.replace(/[^0-9.-]+/g,""));
-
-                let cartItem = cart.find(item => item.name === `${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)}`);
-                if (!cartItem) {
-                    cart.push({ name: `${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)}`, price: pizzaPrice, quantity: 1 });
-                } else {
-                    cartItem.quantity++; // Increment quantity in cart
-                }
-
-                // Show quantity div and hide add-to-order button
-                const quantityDiv = button.nextElementSibling;
-                quantityDiv.classList.remove("hidden");
-                button.classList.add("hidden");
-
-                // Update the displayed quantity
-                const qtyDisplay = quantityDiv.querySelector(".qty");
-                qtyDisplay.textContent = cartItem ? cartItem.quantity : 1;
-
-                updateCartCount();
-                displayCartItems();
-                console.log(`Added ${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)} x${cartItem.quantity} - $${(pizzaPrice * cartItem.quantity).toFixed(2)} to the order.`);
-            });
-        });
-
-        // Attach event listeners for quantity buttons
-        const quantityButtons = document.querySelectorAll(".quantity");
-        quantityButtons.forEach(quantityDiv => {
-            const plusBtn = quantityDiv.querySelector(".plus");
-            const minusBtn = quantityDiv.querySelector(".minus");
-            const qtyDisplay = quantityDiv.querySelector(".qty");
-
-            plusBtn.addEventListener("click", function() {
-                let currentQty = parseInt(qtyDisplay.textContent);
-                qtyDisplay.textContent = currentQty + 1;
-
-                // Update the cart quantity
-                const pizzaItem = plusBtn.closest(".pizza-item");
-                const pizzaName = pizzaItem.getAttribute("data-name");
-                const size = plusBtn.closest(".priceandorder").id;
-                let cartItem = cart.find(item => item.name === `${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)}`);
-                if (cartItem) {
-                    cartItem.quantity++;
-                }
-                updateCartCount();
-            });
-
-            minusBtn.addEventListener("click", function() {
-                let currentQty = parseInt(qtyDisplay.textContent);
-                if (currentQty > 1) {
-                    qtyDisplay.textContent = currentQty - 1;
-
-                    // Update the cart quantity
-                    const pizzaItem = minusBtn.closest(".pizza-item");
-                    const pizzaName = pizzaItem.getAttribute("data-name");
-                    const size = minusBtn.closest(".priceandorder").id;
-                    let cartItem = cart.find(item => item.name === `${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)}`);
-                    if (cartItem) {
-                        cartItem.quantity--;
-                    }
-                    updateCartCount();
-                } else {
-                    // If quantity is 0, hide quantity div and show add-to-order button
-                    const addToOrderBtn = minusBtn.closest(".priceandorder").querySelector(".add-to-order");
-                    quantityDiv.classList.add("hidden");
-                    addToOrderBtn.classList.remove("hidden");
-
-                    // Remove item from cart
-                    const pizzaItem = minusBtn.closest(".pizza-item");
-                    const pizzaName = pizzaItem.getAttribute("data-name");
-                    const size = minusBtn.closest(".priceandorder").id;
-                    cart = cart.filter(item => item.name !== `${pizzaName} ${size.charAt(0).toUpperCase() + size.slice(1)}`);
-                    updateCartCount();
-                }
-            });
-        });
     }
 });
 
@@ -288,6 +150,8 @@ function attachItemEventListeners() {
         });
     });
 }
+
+
 
 // Update cart count
 function updateCartCount() {
@@ -473,7 +337,7 @@ document.getElementById('delivery-order-btn').addEventListener('click', function
     let orderType = 'Delivery';
     let message = `Location: https://www.google.com/maps?q=${position.lat},${position.lng}\n\n`;
     message += `*Hi Captain's Pizza*\n`;
-    message += `New Wooden Food Order\n\n`;
+    message += `New Food Order\n\n`;
     message += `Order ID: *#${orderID}*\n`;
     message += `Branch: *${selectedBranch}*\n`;
     message += `Customer Name: *${name}*\n`;
