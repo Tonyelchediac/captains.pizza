@@ -1,6 +1,6 @@
 [
     {
-        "name": "SoftDrink",
+        "name": "Soft Drink",
         "price": "1.75",
         "description": ""
     },
@@ -25,13 +25,88 @@
         "description": ""
     },
     {
-        "name": "Beer Local",
-        "price": "2.75",
+        "name": "Tea",
+        "price": "2.25",
         "description": ""
     },
     {
-        "name": "Beer Imported",
+        "name": "Expresso",
+        "price": "2.00",
+        "description": ""
+    },
+    {
+        "name": "Cappuccino",
+        "price": "5.00",
+        "description": ""
+    },
+    {
+        "name": "American Coffee",
+        "price": "2.00",
+        "description": ""
+    },
+    {
+        "name": "Add Flavor",
+        "price": "1.50",
+        "description": ""
+    },
+    {
+        "name": "Local Beer",
         "price": "3.00",
+        "description": ""
+    },
+    {
+        "name": "Imported Beer",
+        "price": "5.00",
+        "description": ""
+    },
+    {
+        "name": "Wine Glass",
+        "price": "6.00",
+        "description": ""
+    },
+    {
+        "name": "Whiskey Regular Glass",
+        "price": "6.00",
+        "description": ""
+    },
+    {
+        "name": "Whiskey Premium Glass",
+        "price": "7.00",
+        "description": ""
+    },
+    {
+        "name": "Gin Glass",
+        "price": "6.00",
+        "description": ""
+    },
+    {
+        "name": "Vodka Glass",
+        "price": "6.00",
+        "description": ""
+    },
+    {
+        "name": "Wine Bottle",
+        "price": "20.00",
+        "description": ""
+    },
+    {
+        "name": "Whiskey Regular Bottle",
+        "price": "30.00",
+        "description": ""
+    },
+    {
+        "name": "Whiskey Premium Bottle",
+        "price": "70.00",
+        "description": ""
+    },
+    {
+        "name": "Gin Bottle",
+        "price": "30.00",
+        "description": ""
+    },
+    {
+        "name": "Vodka Bottle",
+        "price": "30.00",
         "description": ""
     }
 ]

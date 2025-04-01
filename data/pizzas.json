@@ -1,52 +1,52 @@
 [
     {
         "name": "Margherita Medium",
-        "price": "6.50",
+        "price": "7.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Fresh Basil"
     },
     {
         "name": "Margherita Large",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Fresh Basil"
     },
     {
         "name": "Vegeterian Medium",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom, Onion, Black Olives"
     },
     {
         "name": "Vegeterian Large",
-        "price": "8.00",
+        "price": "9.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Green Pepper, Corn, Mushroom, Onion, Black Olives"
     },
     {
         "name": "Classic Medium",
-        "price": "7.00",
+        "price": "7.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom"
     },
     {
         "name": "Classic Large",
-        "price": "7.75",
+        "price": "8.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Ham, Black Olives, Mushroom"
     },
     {
         "name": "Artichoke Medium",
-        "price": "7.00",
+        "price": "7.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano"
     },
     {
         "name": "Artichoke Large",
-        "price": "8.00",
+        "price": "8.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Artichoke, Oregano"
     },
     {
         "name": "Pepperoni Medium",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano"
     },
     {
         "name": "Pepperoni Large",
-        "price": "8.50",
+        "price": "9.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Pepperoni, Oregano"
     },
     {
@@ -61,62 +61,62 @@
     },
     {
         "name": "Captains Medium",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry Tomato, Balsamic Sauce"
     },
     {
         "name": "Captains Large",
-        "price": "8.50",
+        "price": "9.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Goat Cheese, Baby Rocca, Cherry Tomato, Balsamic Sauce"
     },
     {
         "name": "Village Medium",
-        "price": "7.00",
+        "price": "7.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato"
     },
     {
         "name": "Village Large",
-        "price": "7.75",
+        "price": "8.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Thyme, Sundried Tomato"
     },
     {
         "name": "Eggplant Medium",
-        "price": "7.00",
+        "price": "7.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano"
     },
     {
         "name": "Eggplant Large",
-        "price": "7.75",
+        "price": "8.50",
         "description": "Pizza Sauce, Mozzarella Cheese, Eggplant, Parmesan Cheese, Oregano"
     },
     {
         "name": "Chicken Pizza Medium",
-        "price": "7.75",
+        "price": "8.25",
         "description": "Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives, Mushroom, & Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top"
     },
     {
         "name": "Chicken Pizza Large",
-        "price": "8.75",
+        "price": "9.25",
         "description": "Pizza Sauce, Mozzarella Cheese, Chicken, Onion, Black Olives, Mushroom, & Your Choice Of: BBQ Sauce Or Cocktail Sauce On Top"
     },
     {
         "name": "Four Cheese Medium",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel, Parmesan"
     },
     {
         "name": "Four Cheese Large",
-        "price": "8.50",
+        "price": "9.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Gorgonzalo, Fondel, Parmesan"
     },
     {
         "name": "Toscana Medium",
-        "price": "7.50",
+        "price": "8.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried Tomato, Fresh Basil"
     },
     {
         "name": "Toscana Large",
-        "price": "8.25",
+        "price": "9.00",
         "description": "Pizza Sauce, Mozzarella Cheese, Fondel, Goat Cheese, Sundried Tomato, Fresh Basil"
     }
 ]

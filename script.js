@@ -15,16 +15,24 @@ const deliveryAlert = document.getElementById("Delivery");
 const closeDelivery = document.querySelector(".closeDelivery");
 
 // Open cart
-cartBtn.addEventListener("click", function () {
+cartBtn.addEventListener("click", () => {
     cartContainer.classList.add("active");
     cartContainerButtons.classList.add("active");
     displayCartItems();
 });
 
 // Close cart
-closeCartBtn.addEventListener("click", function () {
+closeCartBtn.addEventListener("click", () => {
     cartContainer.classList.remove("active");
     cartContainerButtons.classList.remove("active");
+});
+
+// Close cart when clicking outside
+document.addEventListener('click', (event) => {
+    if (cartContainer.classList.contains('active') && !cartContainer.contains(event.target) && !cartBtn.contains(event.target)) {
+        cartContainer.classList.remove("active");
+        cartContainerButtons.classList.remove("active");
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
