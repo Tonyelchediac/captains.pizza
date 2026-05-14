@@ -279,6 +279,11 @@ header h1 {
 }
 
 /* Menu Items Section */
+
+.items-section {
+  scroll-margin-top: 120px;
+}
+
 .menu-title {
   padding: 60px 0 30px;
   text-align: center;
